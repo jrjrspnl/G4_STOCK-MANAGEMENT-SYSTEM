@@ -76,11 +76,12 @@ namespace G4STOCKMANAGEMENTSYSTEM {
     private: System::Windows::Forms::Panel^ panel2;
     private: System::Windows::Forms::Label^ label3;
     private: System::Windows::Forms::Label^ label1;
-    private: System::Windows::Forms::PictureBox^ pictureBox3;
+
     private: System::Windows::Forms::PictureBox^ pictureBox1;
     private: System::Windows::Forms::Panel^ Panel_Title;
-    private: System::Windows::Forms::Panel^ Pl_Db;
+
     private: System::Windows::Forms::PictureBox^ pictureBox2;
+    private: System::Windows::Forms::Panel^ Pl_Db;
 
 
 
@@ -113,14 +114,12 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->panel2 = (gcnew System::Windows::Forms::Panel());
             this->label3 = (gcnew System::Windows::Forms::Label());
             this->label1 = (gcnew System::Windows::Forms::Label());
-            this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
             this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
             this->Panel_Title = (gcnew System::Windows::Forms::Panel());
             this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
             this->Pl_Db = (gcnew System::Windows::Forms::Panel());
             this->Panel_Btn->SuspendLayout();
             this->panel2->SuspendLayout();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
             this->Panel_Title->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
@@ -135,9 +134,9 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Panel_Btn->Controls->Add(this->Btn_Logout);
             this->Panel_Btn->Controls->Add(this->Btn_Customers);
             this->Panel_Btn->Dock = System::Windows::Forms::DockStyle::Bottom;
-            this->Panel_Btn->Location = System::Drawing::Point(0, 679);
+            this->Panel_Btn->Location = System::Drawing::Point(0, 523);
             this->Panel_Btn->Name = L"Panel_Btn";
-            this->Panel_Btn->Size = System::Drawing::Size(1034, 100);
+            this->Panel_Btn->Size = System::Drawing::Size(1036, 95);
             this->Panel_Btn->TabIndex = 3;
             // 
             // kryptonButton1
@@ -159,7 +158,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
             this->kryptonButton1->PaletteMode = ComponentFactory::Krypton::Toolkit::PaletteMode::ProfessionalSystem;
-            this->kryptonButton1->Size = System::Drawing::Size(125, 100);
+            this->kryptonButton1->Size = System::Drawing::Size(120, 95);
             this->kryptonButton1->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
             this->kryptonButton1->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
@@ -228,7 +227,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // Btn_Orders
             // 
-            this->Btn_Orders->Location = System::Drawing::Point(626, 0);
+            this->Btn_Orders->Location = System::Drawing::Point(645, 0);
             this->Btn_Orders->Name = L"Btn_Orders";
             this->Btn_Orders->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
@@ -245,7 +244,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
             this->Btn_Orders->PaletteMode = ComponentFactory::Krypton::Toolkit::PaletteMode::ProfessionalSystem;
-            this->Btn_Orders->Size = System::Drawing::Size(125, 100);
+            this->Btn_Orders->Size = System::Drawing::Size(120, 95);
             this->Btn_Orders->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
             this->Btn_Orders->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
@@ -315,7 +314,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // Btn_Products
             // 
-            this->Btn_Products->Location = System::Drawing::Point(768, 0);
+            this->Btn_Products->Location = System::Drawing::Point(780, 0);
             this->Btn_Products->Name = L"Btn_Products";
             this->Btn_Products->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
@@ -332,7 +331,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
             this->Btn_Products->PaletteMode = ComponentFactory::Krypton::Toolkit::PaletteMode::ProfessionalSystem;
-            this->Btn_Products->Size = System::Drawing::Size(125, 100);
+            this->Btn_Products->Size = System::Drawing::Size(120, 95);
             this->Btn_Products->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
             this->Btn_Products->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
@@ -488,7 +487,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // Btn_Customers
             // 
-            this->Btn_Customers->Location = System::Drawing::Point(909, 0);
+            this->Btn_Customers->Location = System::Drawing::Point(916, 0);
             this->Btn_Customers->Name = L"Btn_Customers";
             this->Btn_Customers->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
@@ -505,7 +504,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
             this->Btn_Customers->PaletteMode = ComponentFactory::Krypton::Toolkit::PaletteMode::ProfessionalSystem;
-            this->Btn_Customers->Size = System::Drawing::Size(125, 100);
+            this->Btn_Customers->Size = System::Drawing::Size(120, 95);
             this->Btn_Customers->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
             this->Btn_Customers->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
@@ -605,17 +604,6 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label1->TabIndex = 2;
             this->label1->Text = L"STOCK MANAGEMENT SYSTEM";
             // 
-            // pictureBox3
-            // 
-            this->pictureBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.BackgroundImage")));
-            this->pictureBox3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-            this->pictureBox3->Location = System::Drawing::Point(1034, 8);
-            this->pictureBox3->Name = L"pictureBox3";
-            this->pictureBox3->Size = System::Drawing::Size(37, 28);
-            this->pictureBox3->TabIndex = 9;
-            this->pictureBox3->TabStop = false;
-            this->pictureBox3->Click += gcnew System::EventHandler(this, &CASHIER_DB::pictureBox3_Click);
-            // 
             // pictureBox1
             // 
             this->pictureBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
@@ -633,13 +621,12 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Panel_Title->BackColor = System::Drawing::SystemColors::Window;
             this->Panel_Title->Controls->Add(this->pictureBox2);
             this->Panel_Title->Controls->Add(this->pictureBox1);
-            this->Panel_Title->Controls->Add(this->pictureBox3);
             this->Panel_Title->Controls->Add(this->label1);
             this->Panel_Title->Controls->Add(this->panel2);
             this->Panel_Title->Dock = System::Windows::Forms::DockStyle::Top;
             this->Panel_Title->Location = System::Drawing::Point(0, 0);
             this->Panel_Title->Name = L"Panel_Title";
-            this->Panel_Title->Size = System::Drawing::Size(1034, 71);
+            this->Panel_Title->Size = System::Drawing::Size(1036, 71);
             this->Panel_Title->TabIndex = 2;
             // 
             // pictureBox2
@@ -659,15 +646,15 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Pl_Db->Dock = System::Windows::Forms::DockStyle::Fill;
             this->Pl_Db->Location = System::Drawing::Point(0, 71);
             this->Pl_Db->Name = L"Pl_Db";
-            this->Pl_Db->Size = System::Drawing::Size(1034, 608);
+            this->Pl_Db->Size = System::Drawing::Size(1036, 452);
             this->Pl_Db->TabIndex = 4;
-            this->Pl_Db->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &CASHIER_DB::Pl_Db_Paint_1);
+            this->Pl_Db->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &CASHIER_DB::Pl_Db_Paint);
             // 
             // CASHIER_DB
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-            this->ClientSize = System::Drawing::Size(1034, 779);
+            this->ClientSize = System::Drawing::Size(1036, 618);
             this->Controls->Add(this->Pl_Db);
             this->Controls->Add(this->Panel_Btn);
             this->Controls->Add(this->Panel_Title);
@@ -678,7 +665,6 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Panel_Btn->ResumeLayout(false);
             this->panel2->ResumeLayout(false);
             this->panel2->PerformLayout();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
             this->Panel_Title->ResumeLayout(false);
             this->Panel_Title->PerformLayout();
@@ -708,15 +694,14 @@ private: System::Void Btn_Orders_Click(System::Object^ sender, System::EventArgs
     this->Pl_Db->Controls->Add(ORform);
     ORform->Show();
 }
-private: System::Void Pl_Db_Paint_1(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
+    this->Close();
+}
+private: System::Void Pl_Db_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
     CCUSTOMERS^ CCMform = gcnew CCUSTOMERS();
     CCMform->TopLevel = false;
     this->Pl_Db->Controls->Add(CCMform);
     CCMform->Show();
-
-}
-private: System::Void pictureBox2_Click(System::Object^ sender, System::EventArgs^ e) {
-    this->Close();
 }
 };
 }

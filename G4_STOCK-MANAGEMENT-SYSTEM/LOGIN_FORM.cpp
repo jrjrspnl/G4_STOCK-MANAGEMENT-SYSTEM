@@ -1,11 +1,12 @@
 #include "LOGIN_FORM.h"
+#include "CASHIER_DB.h"
 
 using namespace G4STOCKMANAGEMENTSYSTEM;
 [STAThreadAttribute]
 
 int main() {
 
-	Application::Run(gcnew LOGIN_FORM());
+	Application::Run(gcnew CASHIER_DB());
 
 	return 0;
 }

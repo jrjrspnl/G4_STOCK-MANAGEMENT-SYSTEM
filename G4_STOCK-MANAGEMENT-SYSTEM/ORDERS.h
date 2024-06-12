@@ -38,7 +38,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
     protected:
     private: ComponentFactory::Krypton::Toolkit::KryptonButton^ kryptonButton5;
     private: ComponentFactory::Krypton::Toolkit::KryptonButton^ kryptonButton6;
-    private: System::Windows::Forms::Label^ label13;
+
     private: System::Windows::Forms::Label^ label14;
     private: System::Windows::Forms::Label^ label12;
     private: System::Windows::Forms::TextBox^ textBox1;
@@ -53,18 +53,18 @@ namespace G4STOCKMANAGEMENTSYSTEM {
     private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column13;
     private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column14;
     private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column15;
-    private: System::Windows::Forms::Panel^ panel2;
-    private: ComponentFactory::Krypton::Toolkit::KryptonDataGridView^ kryptonDataGridView1;
-    private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
-    private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
-    private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
-    private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
-    private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
-    private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column6;
-    private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
-    private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column8;
-    private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column9;
-    private: System::Windows::Forms::Label^ label9;
+
+
+
+
+
+
+
+
+
+
+
+
     private: System::Windows::Forms::Panel^ panel4;
     private: System::Windows::Forms::Label^ label7;
     private: ComponentFactory::Krypton::Toolkit::KryptonButton^ kryptonButton7;
@@ -79,6 +79,8 @@ namespace G4STOCKMANAGEMENTSYSTEM {
     private: System::Windows::Forms::Label^ label2;
     private: ComponentFactory::Krypton::Toolkit::KryptonComboBox^ kryptonComboBox1;
     private: System::Windows::Forms::Label^ label1;
+    private: System::Windows::Forms::Label^ label9;
+    private: System::Windows::Forms::Label^ label13;
 
     protected:
 
@@ -142,7 +144,6 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->panel3 = (gcnew System::Windows::Forms::Panel());
             this->kryptonButton5 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
             this->kryptonButton6 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
-            this->label13 = (gcnew System::Windows::Forms::Label());
             this->label14 = (gcnew System::Windows::Forms::Label());
             this->label12 = (gcnew System::Windows::Forms::Label());
             this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -157,18 +158,6 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Column13 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->Column14 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->Column15 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-            this->panel2 = (gcnew System::Windows::Forms::Panel());
-            this->kryptonDataGridView1 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonDataGridView());
-            this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-            this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-            this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-            this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-            this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-            this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-            this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-            this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-            this->Column9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-            this->label9 = (gcnew System::Windows::Forms::Label());
             this->panel4 = (gcnew System::Windows::Forms::Panel());
             this->label7 = (gcnew System::Windows::Forms::Label());
             this->kryptonButton7 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
@@ -183,10 +172,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label2 = (gcnew System::Windows::Forms::Label());
             this->kryptonComboBox1 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonComboBox());
             this->label1 = (gcnew System::Windows::Forms::Label());
+            this->label13 = (gcnew System::Windows::Forms::Label());
+            this->label9 = (gcnew System::Windows::Forms::Label());
             this->panel3->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonDataGridView2))->BeginInit();
-            this->panel2->SuspendLayout();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonDataGridView1))->BeginInit();
             this->panel4->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonComboBox2))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonComboBox1))->BeginInit();
@@ -195,6 +184,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // panel3
             // 
             this->panel3->BackColor = System::Drawing::Color::White;
+            this->panel3->Controls->Add(this->label9);
             this->panel3->Controls->Add(this->kryptonButton5);
             this->panel3->Controls->Add(this->kryptonButton6);
             this->panel3->Controls->Add(this->label13);
@@ -205,15 +195,15 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->panel3->Controls->Add(this->label8);
             this->panel3->Controls->Add(this->label11);
             this->panel3->Controls->Add(this->kryptonDataGridView2);
-            this->panel3->Location = System::Drawing::Point(476, 29);
+            this->panel3->Location = System::Drawing::Point(478, 12);
             this->panel3->Name = L"panel3";
-            this->panel3->Size = System::Drawing::Size(546, 550);
+            this->panel3->Size = System::Drawing::Size(546, 428);
             this->panel3->TabIndex = 29;
             // 
             // kryptonButton5
             // 
             this->kryptonButton5->Cursor = System::Windows::Forms::Cursors::Arrow;
-            this->kryptonButton5->Location = System::Drawing::Point(142, 493);
+            this->kryptonButton5->Location = System::Drawing::Point(321, 315);
             this->kryptonButton5->Name = L"kryptonButton5";
             this->kryptonButton5->OverrideDefault->Back->Color1 = System::Drawing::Color::DodgerBlue;
             this->kryptonButton5->OverrideDefault->Back->Color2 = System::Drawing::Color::DodgerBlue;
@@ -222,7 +212,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->kryptonButton5->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->kryptonButton5->Size = System::Drawing::Size(277, 32);
+            this->kryptonButton5->Size = System::Drawing::Size(150, 32);
             this->kryptonButton5->StateCommon->Back->Color1 = System::Drawing::Color::DodgerBlue;
             this->kryptonButton5->StateCommon->Back->Color2 = System::Drawing::Color::DodgerBlue;
             this->kryptonButton5->StateCommon->Border->Color1 = System::Drawing::Color::DodgerBlue;
@@ -239,7 +229,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // kryptonButton6
             // 
-            this->kryptonButton6->Location = System::Drawing::Point(142, 449);
+            this->kryptonButton6->Location = System::Drawing::Point(321, 258);
             this->kryptonButton6->Name = L"kryptonButton6";
             this->kryptonButton6->OverrideDefault->Back->Color1 = System::Drawing::Color::MediumSeaGreen;
             this->kryptonButton6->OverrideDefault->Back->Color2 = System::Drawing::Color::MediumSeaGreen;
@@ -255,7 +245,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->kryptonButton6->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->kryptonButton6->Size = System::Drawing::Size(277, 32);
+            this->kryptonButton6->Size = System::Drawing::Size(150, 32);
             this->kryptonButton6->StateCommon->Back->Color1 = System::Drawing::Color::MediumSeaGreen;
             this->kryptonButton6->StateCommon->Back->Color2 = System::Drawing::Color::MediumSeaGreen;
             this->kryptonButton6->StateCommon->Border->Color1 = System::Drawing::Color::MediumSeaGreen;
@@ -299,25 +289,13 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->kryptonButton6->TabIndex = 29;
             this->kryptonButton6->Values->Text = L"Pay Now";
             // 
-            // label13
-            // 
-            this->label13->AutoSize = true;
-            this->label13->BackColor = System::Drawing::Color::White;
-            this->label13->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->label13->Location = System::Drawing::Point(11, 413);
-            this->label13->Name = L"label13";
-            this->label13->Size = System::Drawing::Size(40, 17);
-            this->label13->TabIndex = 34;
-            this->label13->Text = L"10.00";
-            // 
             // label14
             // 
             this->label14->AutoSize = true;
             this->label14->BackColor = System::Drawing::Color::White;
             this->label14->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label14->Location = System::Drawing::Point(11, 393);
+            this->label14->Location = System::Drawing::Point(11, 352);
             this->label14->Name = L"label14";
             this->label14->Size = System::Drawing::Size(63, 16);
             this->label14->TabIndex = 33;
@@ -329,7 +307,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label12->BackColor = System::Drawing::Color::White;
             this->label12->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label12->Location = System::Drawing::Point(11, 339);
+            this->label12->Location = System::Drawing::Point(11, 299);
             this->label12->Name = L"label12";
             this->label12->Size = System::Drawing::Size(61, 16);
             this->label12->TabIndex = 32;
@@ -337,7 +315,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // textBox1
             // 
-            this->textBox1->Location = System::Drawing::Point(14, 360);
+            this->textBox1->Location = System::Drawing::Point(14, 320);
             this->textBox1->Name = L"textBox1";
             this->textBox1->Size = System::Drawing::Size(159, 20);
             this->textBox1->TabIndex = 31;
@@ -348,7 +326,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label10->BackColor = System::Drawing::Color::White;
             this->label10->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label10->Location = System::Drawing::Point(11, 315);
+            this->label10->Location = System::Drawing::Point(11, 320);
             this->label10->Name = L"label10";
             this->label10->Size = System::Drawing::Size(22, 17);
             this->label10->TabIndex = 30;
@@ -372,7 +350,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label11->BackColor = System::Drawing::Color::White;
             this->label11->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label11->Location = System::Drawing::Point(11, 295);
+            this->label11->Location = System::Drawing::Point(11, 250);
             this->label11->Name = L"label11";
             this->label11->Size = System::Drawing::Size(78, 16);
             this->label11->TabIndex = 29;
@@ -387,7 +365,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             });
             this->kryptonDataGridView2->Location = System::Drawing::Point(14, 44);
             this->kryptonDataGridView2->Name = L"kryptonDataGridView2";
-            this->kryptonDataGridView2->Size = System::Drawing::Size(516, 220);
+            this->kryptonDataGridView2->Size = System::Drawing::Size(516, 180);
             this->kryptonDataGridView2->StateCommon->Background->Color1 = System::Drawing::Color::Gainsboro;
             this->kryptonDataGridView2->StateCommon->Background->Color2 = System::Drawing::Color::Gainsboro;
             this->kryptonDataGridView2->StateCommon->BackStyle = ComponentFactory::Krypton::Toolkit::PaletteBackStyle::GridBackgroundList;
@@ -442,110 +420,6 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Column15->HeaderText = L"TotalPrice";
             this->Column15->Name = L"Column15";
             // 
-            // panel2
-            // 
-            this->panel2->BackColor = System::Drawing::Color::White;
-            this->panel2->Controls->Add(this->kryptonDataGridView1);
-            this->panel2->Controls->Add(this->label9);
-            this->panel2->Location = System::Drawing::Point(12, 309);
-            this->panel2->Name = L"panel2";
-            this->panel2->Size = System::Drawing::Size(448, 272);
-            this->panel2->TabIndex = 28;
-            // 
-            // kryptonDataGridView1
-            // 
-            this->kryptonDataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-            this->kryptonDataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(9) {
-                this->Column1,
-                    this->Column2, this->Column3, this->Column4, this->Column5, this->Column6, this->Column7, this->Column8, this->Column9
-            });
-            this->kryptonDataGridView1->Location = System::Drawing::Point(21, 52);
-            this->kryptonDataGridView1->Name = L"kryptonDataGridView1";
-            this->kryptonDataGridView1->Size = System::Drawing::Size(407, 195);
-            this->kryptonDataGridView1->StateCommon->Background->Color1 = System::Drawing::Color::Gainsboro;
-            this->kryptonDataGridView1->StateCommon->Background->Color2 = System::Drawing::Color::Gainsboro;
-            this->kryptonDataGridView1->StateCommon->BackStyle = ComponentFactory::Krypton::Toolkit::PaletteBackStyle::GridBackgroundList;
-            this->kryptonDataGridView1->StateCommon->DataCell->Back->Color1 = System::Drawing::Color::White;
-            this->kryptonDataGridView1->StateCommon->DataCell->Back->Color2 = System::Drawing::Color::White;
-            this->kryptonDataGridView1->StateCommon->HeaderColumn->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->kryptonDataGridView1->StateCommon->HeaderColumn->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->kryptonDataGridView1->StateCommon->HeaderColumn->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->kryptonDataGridView1->StateCommon->HeaderColumn->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->kryptonDataGridView1->StateCommon->HeaderColumn->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->kryptonDataGridView1->TabIndex = 18;
-            // 
-            // Column1
-            // 
-            this->Column1->HeaderText = L"ID";
-            this->Column1->Name = L"Column1";
-            this->Column1->Width = 75;
-            // 
-            // Column2
-            // 
-            this->Column2->HeaderText = L"ProductID";
-            this->Column2->Name = L"Column2";
-            this->Column2->Width = 75;
-            // 
-            // Column3
-            // 
-            this->Column3->HeaderText = L"ProductName";
-            this->Column3->Name = L"Column3";
-            this->Column3->Width = 75;
-            // 
-            // Column4
-            // 
-            this->Column4->HeaderText = L"Category";
-            this->Column4->Name = L"Column4";
-            this->Column4->Width = 75;
-            // 
-            // Column5
-            // 
-            this->Column5->HeaderText = L"Price";
-            this->Column5->Name = L"Column5";
-            this->Column5->Width = 75;
-            // 
-            // Column6
-            // 
-            this->Column6->HeaderText = L"Stock";
-            this->Column6->Name = L"Column6";
-            this->Column6->Width = 75;
-            // 
-            // Column7
-            // 
-            this->Column7->HeaderText = L"ImagePath";
-            this->Column7->Name = L"Column7";
-            this->Column7->Width = 75;
-            // 
-            // Column8
-            // 
-            this->Column8->HeaderText = L"Status";
-            this->Column8->Name = L"Column8";
-            this->Column8->Width = 75;
-            // 
-            // Column9
-            // 
-            this->Column9->HeaderText = L"Date";
-            this->Column9->Name = L"Column9";
-            this->Column9->Width = 83;
-            // 
-            // label9
-            // 
-            this->label9->AutoSize = true;
-            this->label9->BackColor = System::Drawing::Color::Transparent;
-            this->label9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->label9->Location = System::Drawing::Point(19, 13);
-            this->label9->Name = L"label9";
-            this->label9->Size = System::Drawing::Size(118, 23);
-            this->label9->TabIndex = 15;
-            this->label9->Text = L"All Products";
-            // 
             // panel4
             // 
             this->panel4->BackColor = System::Drawing::Color::White;
@@ -562,9 +436,9 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->panel4->Controls->Add(this->label2);
             this->panel4->Controls->Add(this->kryptonComboBox1);
             this->panel4->Controls->Add(this->label1);
-            this->panel4->Location = System::Drawing::Point(12, 27);
+            this->panel4->Location = System::Drawing::Point(12, 12);
             this->panel4->Name = L"panel4";
-            this->panel4->Size = System::Drawing::Size(448, 264);
+            this->panel4->Size = System::Drawing::Size(448, 428);
             this->panel4->TabIndex = 27;
             // 
             // label7
@@ -573,7 +447,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label7->BackColor = System::Drawing::Color::White;
             this->label7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label7->Location = System::Drawing::Point(235, 93);
+            this->label7->Location = System::Drawing::Point(222, 117);
             this->label7->Name = L"label7";
             this->label7->Size = System::Drawing::Size(22, 17);
             this->label7->TabIndex = 28;
@@ -581,7 +455,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // kryptonButton7
             // 
-            this->kryptonButton7->Location = System::Drawing::Point(253, 203);
+            this->kryptonButton7->Location = System::Drawing::Point(312, 349);
             this->kryptonButton7->Name = L"kryptonButton7";
             this->kryptonButton7->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
@@ -616,7 +490,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // kryptonButton8
             // 
             this->kryptonButton8->Cursor = System::Windows::Forms::Cursors::Arrow;
-            this->kryptonButton8->Location = System::Drawing::Point(140, 203);
+            this->kryptonButton8->Location = System::Drawing::Point(184, 349);
             this->kryptonButton8->Name = L"kryptonButton8";
             this->kryptonButton8->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
                 static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
@@ -654,7 +528,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label6->BackColor = System::Drawing::Color::White;
             this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label6->Location = System::Drawing::Point(232, 34);
+            this->label6->Location = System::Drawing::Point(220, 57);
             this->label6->Name = L"label6";
             this->label6->Size = System::Drawing::Size(57, 17);
             this->label6->TabIndex = 27;
@@ -666,7 +540,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label5->BackColor = System::Drawing::Color::White;
             this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label5->Location = System::Drawing::Point(21, 123);
+            this->label5->Location = System::Drawing::Point(16, 157);
             this->label5->Name = L"label5";
             this->label5->Size = System::Drawing::Size(67, 16);
             this->label5->TabIndex = 26;
@@ -674,7 +548,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // kryptonButton9
             // 
-            this->kryptonButton9->Location = System::Drawing::Point(23, 203);
+            this->kryptonButton9->Location = System::Drawing::Point(55, 349);
             this->kryptonButton9->Name = L"kryptonButton9";
             this->kryptonButton9->OverrideDefault->Back->Color1 = System::Drawing::Color::MediumSeaGreen;
             this->kryptonButton9->OverrideDefault->Back->Color2 = System::Drawing::Color::MediumSeaGreen;
@@ -736,7 +610,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // kryptonNumericUpDown1
             // 
-            this->kryptonNumericUpDown1->Location = System::Drawing::Point(23, 144);
+            this->kryptonNumericUpDown1->Location = System::Drawing::Point(18, 178);
             this->kryptonNumericUpDown1->Name = L"kryptonNumericUpDown1";
             this->kryptonNumericUpDown1->Size = System::Drawing::Size(177, 26);
             this->kryptonNumericUpDown1->StateActive->Back->Color1 = System::Drawing::Color::WhiteSmoke;
@@ -755,7 +629,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             this->kryptonComboBox2->DropDownWidth = 117;
             this->kryptonComboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Admin", L"Employee" });
-            this->kryptonComboBox2->Location = System::Drawing::Point(23, 90);
+            this->kryptonComboBox2->Location = System::Drawing::Point(19, 113);
             this->kryptonComboBox2->Name = L"kryptonComboBox2";
             this->kryptonComboBox2->Size = System::Drawing::Size(177, 25);
             this->kryptonComboBox2->StateActive->ComboBox->Back->Color1 = System::Drawing::Color::WhiteSmoke;
@@ -773,7 +647,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label4->BackColor = System::Drawing::Color::White;
             this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label4->Location = System::Drawing::Point(20, 71);
+            this->label4->Location = System::Drawing::Point(16, 94);
             this->label4->Name = L"label4";
             this->label4->Size = System::Drawing::Size(77, 16);
             this->label4->TabIndex = 22;
@@ -785,7 +659,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label3->BackColor = System::Drawing::Color::White;
             this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label3->Location = System::Drawing::Point(235, 73);
+            this->label3->Location = System::Drawing::Point(220, 94);
             this->label3->Name = L"label3";
             this->label3->Size = System::Drawing::Size(43, 16);
             this->label3->TabIndex = 21;
@@ -797,7 +671,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label2->BackColor = System::Drawing::Color::White;
             this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label2->Location = System::Drawing::Point(232, 17);
+            this->label2->Location = System::Drawing::Point(220, 34);
             this->label2->Name = L"label2";
             this->label2->Size = System::Drawing::Size(60, 16);
             this->label2->TabIndex = 20;
@@ -807,7 +681,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             this->kryptonComboBox1->DropDownWidth = 117;
             this->kryptonComboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Admin", L"Employee" });
-            this->kryptonComboBox1->Location = System::Drawing::Point(23, 34);
+            this->kryptonComboBox1->Location = System::Drawing::Point(18, 53);
             this->kryptonComboBox1->Name = L"kryptonComboBox1";
             this->kryptonComboBox1->Size = System::Drawing::Size(177, 25);
             this->kryptonComboBox1->StateActive->ComboBox->Back->Color1 = System::Drawing::Color::WhiteSmoke;
@@ -825,20 +699,43 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label1->BackColor = System::Drawing::Color::White;
             this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label1->Location = System::Drawing::Point(21, 15);
+            this->label1->Location = System::Drawing::Point(16, 34);
             this->label1->Name = L"label1";
             this->label1->Size = System::Drawing::Size(72, 16);
             this->label1->TabIndex = 5;
             this->label1->Text = L"Category:";
+            // 
+            // label13
+            // 
+            this->label13->AutoSize = true;
+            this->label13->BackColor = System::Drawing::Color::White;
+            this->label13->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label13->Location = System::Drawing::Point(11, 372);
+            this->label13->Name = L"label13";
+            this->label13->Size = System::Drawing::Size(40, 17);
+            this->label13->TabIndex = 34;
+            this->label13->Text = L"10.00";
+            // 
+            // label9
+            // 
+            this->label9->AutoSize = true;
+            this->label9->BackColor = System::Drawing::Color::White;
+            this->label9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label9->Location = System::Drawing::Point(11, 273);
+            this->label9->Name = L"label9";
+            this->label9->Size = System::Drawing::Size(22, 17);
+            this->label9->TabIndex = 35;
+            this->label9->Text = L"10";
             // 
             // ORDERS
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackColor = System::Drawing::Color::WhiteSmoke;
-            this->ClientSize = System::Drawing::Size(1034, 608);
+            this->ClientSize = System::Drawing::Size(1036, 452);
             this->Controls->Add(this->panel3);
-            this->Controls->Add(this->panel2);
             this->Controls->Add(this->panel4);
             this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
             this->Name = L"ORDERS";
@@ -847,9 +744,6 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->panel3->ResumeLayout(false);
             this->panel3->PerformLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonDataGridView2))->EndInit();
-            this->panel2->ResumeLayout(false);
-            this->panel2->PerformLayout();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonDataGridView1))->EndInit();
             this->panel4->ResumeLayout(false);
             this->panel4->PerformLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonComboBox2))->EndInit();

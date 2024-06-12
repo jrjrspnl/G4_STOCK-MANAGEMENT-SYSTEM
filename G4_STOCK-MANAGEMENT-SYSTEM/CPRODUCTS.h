@@ -94,7 +94,6 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 		{
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->kryptonDataGridView2 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonDataGridView());
-			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -104,6 +103,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonDataGridView2))->BeginInit();
 			this->SuspendLayout();
@@ -115,7 +115,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			this->panel1->Controls->Add(this->label9);
 			this->panel1->Location = System::Drawing::Point(12, 26);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1010, 547);
+			this->panel1->Size = System::Drawing::Size(1010, 401);
 			this->panel1->TabIndex = 19;
 			// 
 			// kryptonDataGridView2
@@ -128,7 +128,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			});
 			this->kryptonDataGridView2->Location = System::Drawing::Point(32, 64);
 			this->kryptonDataGridView2->Name = L"kryptonDataGridView2";
-			this->kryptonDataGridView2->Size = System::Drawing::Size(948, 456);
+			this->kryptonDataGridView2->Size = System::Drawing::Size(947, 317);
 			this->kryptonDataGridView2->StateCommon->Background->Color1 = System::Drawing::Color::Gainsboro;
 			this->kryptonDataGridView2->StateCommon->Background->Color2 = System::Drawing::Color::Gainsboro;
 			this->kryptonDataGridView2->StateCommon->BackStyle = ComponentFactory::Krypton::Toolkit::PaletteBackStyle::GridBackgroundList;
@@ -146,18 +146,6 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 				| ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
 				| ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
 			this->kryptonDataGridView2->TabIndex = 18;
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->BackColor = System::Drawing::Color::Transparent;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(19, 20);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(118, 23);
-			this->label9->TabIndex = 7;
-			this->label9->Text = L"All Products";
 			// 
 			// dataGridViewTextBoxColumn1
 			// 
@@ -205,12 +193,24 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			this->Column9->Name = L"Column9";
 			this->Column9->Width = 107;
 			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->BackColor = System::Drawing::Color::Transparent;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->Location = System::Drawing::Point(19, 20);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(118, 23);
+			this->label9->TabIndex = 7;
+			this->label9->Text = L"All Products";
+			// 
 			// CPRODUCTS
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
-			this->ClientSize = System::Drawing::Size(1034, 608);
+			this->ClientSize = System::Drawing::Size(1036, 452);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"CPRODUCTS";

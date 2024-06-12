@@ -106,7 +106,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			this->panel1->Controls->Add(this->label9);
 			this->panel1->Location = System::Drawing::Point(12, 26);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1010, 547);
+			this->panel1->Size = System::Drawing::Size(1010, 401);
 			this->panel1->TabIndex = 20;
 			// 
 			// kryptonDataGridView1
@@ -118,7 +118,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			});
 			this->kryptonDataGridView1->Location = System::Drawing::Point(32, 64);
 			this->kryptonDataGridView1->Name = L"kryptonDataGridView1";
-			this->kryptonDataGridView1->Size = System::Drawing::Size(949, 456);
+			this->kryptonDataGridView1->Size = System::Drawing::Size(947, 317);
 			this->kryptonDataGridView1->StateCommon->Background->Color1 = System::Drawing::Color::Gainsboro;
 			this->kryptonDataGridView1->StateCommon->Background->Color2 = System::Drawing::Color::Gainsboro;
 			this->kryptonDataGridView1->StateCommon->BackStyle = ComponentFactory::Krypton::Toolkit::PaletteBackStyle::GridBackgroundList;
@@ -171,7 +171,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1034, 608);
+			this->ClientSize = System::Drawing::Size(1036, 452);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"CCUSTOMERS";
