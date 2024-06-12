@@ -193,7 +193,8 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // pictureBox1
             // 
-            this->pictureBox1->BackColor = System::Drawing::Color::WhiteSmoke;
+            this->pictureBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+                static_cast<System::Int32>(static_cast<System::Byte>(224)));
             this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
             this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
             this->pictureBox1->Location = System::Drawing::Point(16, 12);
@@ -211,6 +212,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->pictureBox3->Size = System::Drawing::Size(37, 28);
             this->pictureBox3->TabIndex = 9;
             this->pictureBox3->TabStop = false;
+            this->pictureBox3->Click += gcnew System::EventHandler(this, &ADMIN_DB::pictureBox3_Click);
             // 
             // label1
             // 
@@ -894,11 +896,14 @@ namespace G4STOCKMANAGEMENTSYSTEM {
         Pl_Db->Controls->Clear();
     }
 private: System::Void Pl_Db_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-
-        DASHBOARD^ DBFORM = gcnew DASHBOARD();
-        DBFORM->TopLevel = false;
-        this->Pl_Db->Controls->Add(DBFORM);
-        DBFORM->Show();
+    DASHBOARD^ Dboard = gcnew DASHBOARD();
+    Dboard->TopLevel = false;
+    this->Pl_Db->Controls->Add(Dboard);
+    Dboard->Show();
+      
+}
+private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
+    this->Close();
 }
 };
 }

@@ -65,13 +65,13 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 		void InitializeComponent(void)
 		{
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->kryptonDataGridView1 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonDataGridView());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonDataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -85,18 +85,6 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(764, 547);
 			this->panel1->TabIndex = 18;
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->BackColor = System::Drawing::Color::Transparent;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(19, 20);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(135, 23);
-			this->label9->TabIndex = 7;
-			this->label9->Text = L"All Customers";
 			// 
 			// kryptonDataGridView1
 			// 
@@ -157,10 +145,23 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			this->Column5->Name = L"Column5";
 			this->Column5->Width = 142;
 			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->BackColor = System::Drawing::Color::Transparent;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->Location = System::Drawing::Point(19, 20);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(135, 23);
+			this->label9->TabIndex = 7;
+			this->label9->Text = L"All Customers";
+			// 
 			// CUSTOMERS
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->ClientSize = System::Drawing::Size(809, 605);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;

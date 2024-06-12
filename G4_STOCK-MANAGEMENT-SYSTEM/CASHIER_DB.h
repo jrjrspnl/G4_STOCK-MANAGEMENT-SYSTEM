@@ -1,6 +1,7 @@
 #pragma once
 #include "CUSTOMERS.h"
-#include "PRODUCTS.h"
+#include "CPRODUCTS.h"
+#include "ORDERS.h"
 
 namespace G4STOCKMANAGEMENTSYSTEM {
 
@@ -45,15 +46,25 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::Label^ label3;
     private: System::Windows::Forms::Panel^ Panel_Btn;
 
-    private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_Customers;
+
+
     private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_Products;
     private: System::Windows::Forms::Panel^ Panel_Admin;
     private: System::Windows::Forms::PictureBox^ pictureBox2;
     private: System::Windows::Forms::Label^ label2;
     private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_Logout;
-    private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_Users;
-    private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_Dashboard;
+    private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_Costomers;
+
+
+
+
+
+
     private: System::Windows::Forms::Panel^ Pl_Db;
+    private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_Orders;
+
+
+
 
 	private:
 		/// <summary>
@@ -76,14 +87,13 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->panel2 = (gcnew System::Windows::Forms::Panel());
             this->label3 = (gcnew System::Windows::Forms::Label());
             this->Panel_Btn = (gcnew System::Windows::Forms::Panel());
-            this->Btn_Customers = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
+            this->Btn_Orders = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
             this->Btn_Products = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
             this->Panel_Admin = (gcnew System::Windows::Forms::Panel());
             this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
             this->label2 = (gcnew System::Windows::Forms::Label());
             this->Btn_Logout = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
-            this->Btn_Users = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
-            this->Btn_Dashboard = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
+            this->Btn_Costomers = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
             this->Pl_Db = (gcnew System::Windows::Forms::Panel());
             this->Panel_Title->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -109,7 +119,8 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // pictureBox1
             // 
-            this->pictureBox1->BackColor = System::Drawing::Color::WhiteSmoke;
+            this->pictureBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+                static_cast<System::Int32>(static_cast<System::Byte>(224)));
             this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
             this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
             this->pictureBox1->Location = System::Drawing::Point(16, 12);
@@ -127,6 +138,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->pictureBox3->Size = System::Drawing::Size(37, 28);
             this->pictureBox3->TabIndex = 9;
             this->pictureBox3->TabStop = false;
+            this->pictureBox3->Click += gcnew System::EventHandler(this, &CASHIER_DB::pictureBox3_Click);
             // 
             // label1
             // 
@@ -164,107 +176,107 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             this->Panel_Btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)), static_cast<System::Int32>(static_cast<System::Byte>(151)),
                 static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Panel_Btn->Controls->Add(this->Btn_Customers);
+            this->Panel_Btn->Controls->Add(this->Btn_Orders);
             this->Panel_Btn->Controls->Add(this->Btn_Products);
             this->Panel_Btn->Controls->Add(this->Panel_Admin);
             this->Panel_Btn->Controls->Add(this->Btn_Logout);
-            this->Panel_Btn->Controls->Add(this->Btn_Users);
-            this->Panel_Btn->Controls->Add(this->Btn_Dashboard);
+            this->Panel_Btn->Controls->Add(this->Btn_Costomers);
             this->Panel_Btn->Dock = System::Windows::Forms::DockStyle::Left;
             this->Panel_Btn->Location = System::Drawing::Point(0, 71);
             this->Panel_Btn->Name = L"Panel_Btn";
             this->Panel_Btn->Size = System::Drawing::Size(272, 605);
             this->Panel_Btn->TabIndex = 3;
             // 
-            // Btn_Customers
+            // Btn_Orders
             // 
-            this->Btn_Customers->Location = System::Drawing::Point(0, 168);
-            this->Btn_Customers->Name = L"Btn_Customers";
-            this->Btn_Customers->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+            this->Btn_Orders->Location = System::Drawing::Point(0, 215);
+            this->Btn_Orders->Name = L"Btn_Orders";
+            this->Btn_Orders->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Customers->OverrideDefault->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+            this->Btn_Orders->OverrideDefault->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Customers->OverrideDefault->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+            this->Btn_Orders->OverrideDefault->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Customers->OverrideDefault->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+            this->Btn_Orders->OverrideDefault->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Customers->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->Btn_Orders->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Customers->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->Btn_Orders->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Customers->PaletteMode = ComponentFactory::Krypton::Toolkit::PaletteMode::ProfessionalSystem;
-            this->Btn_Customers->Size = System::Drawing::Size(272, 41);
-            this->Btn_Customers->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Orders->PaletteMode = ComponentFactory::Krypton::Toolkit::PaletteMode::ProfessionalSystem;
+            this->Btn_Orders->Size = System::Drawing::Size(272, 41);
+            this->Btn_Orders->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Customers->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Orders->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Customers->StateCommon->Back->ImageStyle = ComponentFactory::Krypton::Toolkit::PaletteImageStyle::CenterLeft;
-            this->Btn_Customers->StateCommon->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Orders->StateCommon->Back->ImageStyle = ComponentFactory::Krypton::Toolkit::PaletteImageStyle::CenterLeft;
+            this->Btn_Orders->StateCommon->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Customers->StateCommon->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Orders->StateCommon->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Customers->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->Btn_Orders->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Customers->StateCommon->Content->Padding = System::Windows::Forms::Padding(0, 0, 105, 0);
-            this->Btn_Customers->StateCommon->Content->ShortText->Color1 = System::Drawing::Color::White;
-            this->Btn_Customers->StateCommon->Content->ShortText->Color2 = System::Drawing::Color::White;
-            this->Btn_Customers->StateCommon->Content->ShortText->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold,
+            this->Btn_Orders->StateCommon->Content->Padding = System::Windows::Forms::Padding(0, 0, 130, 0);
+            this->Btn_Orders->StateCommon->Content->ShortText->Color1 = System::Drawing::Color::White;
+            this->Btn_Orders->StateCommon->Content->ShortText->Color2 = System::Drawing::Color::White;
+            this->Btn_Orders->StateCommon->Content->ShortText->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->Btn_Customers->StateCommon->Content->ShortText->ImageStyle = ComponentFactory::Krypton::Toolkit::PaletteImageStyle::TopLeft;
-            this->Btn_Customers->StateDisabled->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Orders->StateCommon->Content->ShortText->ImageStyle = ComponentFactory::Krypton::Toolkit::PaletteImageStyle::TopLeft;
+            this->Btn_Orders->StateDisabled->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Customers->StateDisabled->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Orders->StateDisabled->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Customers->StateDisabled->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Orders->StateDisabled->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Customers->StateDisabled->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Orders->StateDisabled->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Customers->StateDisabled->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->Btn_Orders->StateDisabled->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Customers->StateNormal->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Orders->StateNormal->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Customers->StateNormal->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Orders->StateNormal->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Customers->StateNormal->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Orders->StateNormal->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Customers->StateNormal->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Orders->StateNormal->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Customers->StateNormal->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->Btn_Orders->StateNormal->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Customers->StatePressed->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+            this->Btn_Orders->StatePressed->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Customers->StatePressed->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+            this->Btn_Orders->StatePressed->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Customers->StatePressed->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(219)),
+            this->Btn_Orders->StatePressed->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(219)),
                 static_cast<System::Int32>(static_cast<System::Byte>(129)), static_cast<System::Int32>(static_cast<System::Byte>(61)));
-            this->Btn_Customers->StatePressed->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(219)),
+            this->Btn_Orders->StatePressed->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(219)),
                 static_cast<System::Int32>(static_cast<System::Byte>(129)), static_cast<System::Int32>(static_cast<System::Byte>(61)));
-            this->Btn_Customers->StatePressed->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->Btn_Orders->StatePressed->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Customers->StateTracking->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
+            this->Btn_Orders->StateTracking->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
                 static_cast<System::Int32>(static_cast<System::Byte>(136)), static_cast<System::Int32>(static_cast<System::Byte>(68)));
-            this->Btn_Customers->StateTracking->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
+            this->Btn_Orders->StateTracking->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
                 static_cast<System::Int32>(static_cast<System::Byte>(136)), static_cast<System::Int32>(static_cast<System::Byte>(68)));
-            this->Btn_Customers->StateTracking->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
+            this->Btn_Orders->StateTracking->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
                 static_cast<System::Int32>(static_cast<System::Byte>(136)), static_cast<System::Int32>(static_cast<System::Byte>(68)));
-            this->Btn_Customers->StateTracking->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
+            this->Btn_Orders->StateTracking->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
                 static_cast<System::Int32>(static_cast<System::Byte>(136)), static_cast<System::Int32>(static_cast<System::Byte>(68)));
-            this->Btn_Customers->StateTracking->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->Btn_Orders->StateTracking->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Customers->TabIndex = 14;
-            this->Btn_Customers->Values->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Btn_Customers.Values.Image")));
-            this->Btn_Customers->Values->Text = L"   Customers";
+            this->Btn_Orders->TabIndex = 12;
+            this->Btn_Orders->Values->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"kryptonButton1.Values.Image")));
+            this->Btn_Orders->Values->Text = L"   Orders";
+            this->Btn_Orders->Click += gcnew System::EventHandler(this, &CASHIER_DB::Btn_Orders_Click);
             // 
             // Btn_Products
             // 
-            this->Btn_Products->Location = System::Drawing::Point(0, 215);
+            this->Btn_Products->Location = System::Drawing::Point(0, 168);
             this->Btn_Products->Name = L"Btn_Products";
             this->Btn_Products->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
@@ -468,178 +480,92 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Btn_Logout->Values->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Btn_Logout.Values.Image")));
             this->Btn_Logout->Values->Text = L"   Logout";
             // 
-            // Btn_Users
+            // Btn_Costomers
             // 
-            this->Btn_Users->Location = System::Drawing::Point(0, 262);
-            this->Btn_Users->Name = L"Btn_Users";
-            this->Btn_Users->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+            this->Btn_Costomers->Location = System::Drawing::Point(0, 121);
+            this->Btn_Costomers->Name = L"Btn_Costomers";
+            this->Btn_Costomers->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Users->OverrideDefault->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+            this->Btn_Costomers->OverrideDefault->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Users->OverrideDefault->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+            this->Btn_Costomers->OverrideDefault->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Users->OverrideDefault->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+            this->Btn_Costomers->OverrideDefault->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Users->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->Btn_Costomers->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Users->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->Btn_Costomers->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Users->PaletteMode = ComponentFactory::Krypton::Toolkit::PaletteMode::ProfessionalSystem;
-            this->Btn_Users->Size = System::Drawing::Size(272, 41);
-            this->Btn_Users->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Costomers->PaletteMode = ComponentFactory::Krypton::Toolkit::PaletteMode::ProfessionalSystem;
+            this->Btn_Costomers->Size = System::Drawing::Size(272, 41);
+            this->Btn_Costomers->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Users->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Costomers->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Users->StateCommon->Back->ImageStyle = ComponentFactory::Krypton::Toolkit::PaletteImageStyle::CenterLeft;
-            this->Btn_Users->StateCommon->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Costomers->StateCommon->Back->ImageStyle = ComponentFactory::Krypton::Toolkit::PaletteImageStyle::CenterLeft;
+            this->Btn_Costomers->StateCommon->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Users->StateCommon->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Costomers->StateCommon->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Users->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->Btn_Costomers->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Users->StateCommon->Content->Padding = System::Windows::Forms::Padding(0, 0, 130, 0);
-            this->Btn_Users->StateCommon->Content->ShortText->Color1 = System::Drawing::Color::White;
-            this->Btn_Users->StateCommon->Content->ShortText->Color2 = System::Drawing::Color::White;
-            this->Btn_Users->StateCommon->Content->ShortText->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold,
+            this->Btn_Costomers->StateCommon->Content->Padding = System::Windows::Forms::Padding(0, 0, 105, 0);
+            this->Btn_Costomers->StateCommon->Content->ShortText->Color1 = System::Drawing::Color::White;
+            this->Btn_Costomers->StateCommon->Content->ShortText->Color2 = System::Drawing::Color::White;
+            this->Btn_Costomers->StateCommon->Content->ShortText->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->Btn_Users->StateCommon->Content->ShortText->ImageStyle = ComponentFactory::Krypton::Toolkit::PaletteImageStyle::TopLeft;
-            this->Btn_Users->StateDisabled->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Costomers->StateCommon->Content->ShortText->ImageStyle = ComponentFactory::Krypton::Toolkit::PaletteImageStyle::TopLeft;
+            this->Btn_Costomers->StateDisabled->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Users->StateDisabled->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Costomers->StateDisabled->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Users->StateDisabled->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Costomers->StateDisabled->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Users->StateDisabled->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Costomers->StateDisabled->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Users->StateDisabled->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->Btn_Costomers->StateDisabled->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Users->StateNormal->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Costomers->StateNormal->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Users->StateNormal->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Costomers->StateNormal->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Users->StateNormal->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Costomers->StateNormal->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Users->StateNormal->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+            this->Btn_Costomers->StateNormal->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Users->StateNormal->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->Btn_Costomers->StateNormal->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Users->StatePressed->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+            this->Btn_Costomers->StatePressed->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Users->StatePressed->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
+            this->Btn_Costomers->StatePressed->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
                 static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Users->StatePressed->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(219)),
+            this->Btn_Costomers->StatePressed->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(219)),
                 static_cast<System::Int32>(static_cast<System::Byte>(129)), static_cast<System::Int32>(static_cast<System::Byte>(61)));
-            this->Btn_Users->StatePressed->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(219)),
+            this->Btn_Costomers->StatePressed->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(219)),
                 static_cast<System::Int32>(static_cast<System::Byte>(129)), static_cast<System::Int32>(static_cast<System::Byte>(61)));
-            this->Btn_Users->StatePressed->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->Btn_Costomers->StatePressed->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Users->StateTracking->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
+            this->Btn_Costomers->StateTracking->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
                 static_cast<System::Int32>(static_cast<System::Byte>(136)), static_cast<System::Int32>(static_cast<System::Byte>(68)));
-            this->Btn_Users->StateTracking->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
+            this->Btn_Costomers->StateTracking->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
                 static_cast<System::Int32>(static_cast<System::Byte>(136)), static_cast<System::Int32>(static_cast<System::Byte>(68)));
-            this->Btn_Users->StateTracking->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
+            this->Btn_Costomers->StateTracking->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
                 static_cast<System::Int32>(static_cast<System::Byte>(136)), static_cast<System::Int32>(static_cast<System::Byte>(68)));
-            this->Btn_Users->StateTracking->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
+            this->Btn_Costomers->StateTracking->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
                 static_cast<System::Int32>(static_cast<System::Byte>(136)), static_cast<System::Int32>(static_cast<System::Byte>(68)));
-            this->Btn_Users->StateTracking->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->Btn_Costomers->StateTracking->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Users->TabIndex = 9;
-            this->Btn_Users->Values->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Btn_Users.Values.Image")));
-            this->Btn_Users->Values->Text = L"   Orders";
-            // 
-            // Btn_Dashboard
-            // 
-            this->Btn_Dashboard->Location = System::Drawing::Point(0, 121);
-            this->Btn_Dashboard->Name = L"Btn_Dashboard";
-            this->Btn_Dashboard->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
-                static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Dashboard->OverrideDefault->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
-                static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Dashboard->OverrideDefault->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
-                static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Dashboard->OverrideDefault->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
-                static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Dashboard->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Dashboard->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Dashboard->PaletteMode = ComponentFactory::Krypton::Toolkit::PaletteMode::ProfessionalSystem;
-            this->Btn_Dashboard->Size = System::Drawing::Size(272, 41);
-            this->Btn_Dashboard->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Dashboard->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Dashboard->StateCommon->Back->ImageStyle = ComponentFactory::Krypton::Toolkit::PaletteImageStyle::CenterLeft;
-            this->Btn_Dashboard->StateCommon->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Dashboard->StateCommon->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Dashboard->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Dashboard->StateCommon->Content->Padding = System::Windows::Forms::Padding(0, 0, 100, 0);
-            this->Btn_Dashboard->StateCommon->Content->ShortText->Color1 = System::Drawing::Color::White;
-            this->Btn_Dashboard->StateCommon->Content->ShortText->Color2 = System::Drawing::Color::White;
-            this->Btn_Dashboard->StateCommon->Content->ShortText->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold,
-                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->Btn_Dashboard->StateCommon->Content->ShortText->ImageStyle = ComponentFactory::Krypton::Toolkit::PaletteImageStyle::TopLeft;
-            this->Btn_Dashboard->StateDisabled->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Dashboard->StateDisabled->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Dashboard->StateDisabled->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Dashboard->StateDisabled->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Dashboard->StateDisabled->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Dashboard->StateNormal->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Dashboard->StateNormal->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Dashboard->StateNormal->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Dashboard->StateNormal->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
-                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-            this->Btn_Dashboard->StateNormal->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Dashboard->StatePressed->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
-                static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Dashboard->StatePressed->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(110)),
-                static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_Dashboard->StatePressed->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(219)),
-                static_cast<System::Int32>(static_cast<System::Byte>(129)), static_cast<System::Int32>(static_cast<System::Byte>(61)));
-            this->Btn_Dashboard->StatePressed->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(219)),
-                static_cast<System::Int32>(static_cast<System::Byte>(129)), static_cast<System::Int32>(static_cast<System::Byte>(61)));
-            this->Btn_Dashboard->StatePressed->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Dashboard->StateTracking->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
-                static_cast<System::Int32>(static_cast<System::Byte>(136)), static_cast<System::Int32>(static_cast<System::Byte>(68)));
-            this->Btn_Dashboard->StateTracking->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
-                static_cast<System::Int32>(static_cast<System::Byte>(136)), static_cast<System::Int32>(static_cast<System::Byte>(68)));
-            this->Btn_Dashboard->StateTracking->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
-                static_cast<System::Int32>(static_cast<System::Byte>(136)), static_cast<System::Int32>(static_cast<System::Byte>(68)));
-            this->Btn_Dashboard->StateTracking->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(227)),
-                static_cast<System::Int32>(static_cast<System::Byte>(136)), static_cast<System::Int32>(static_cast<System::Byte>(68)));
-            this->Btn_Dashboard->StateTracking->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Dashboard->TabIndex = 5;
-            this->Btn_Dashboard->Values->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Btn_Dashboard.Values.Image")));
-            this->Btn_Dashboard->Values->Text = L"   Dashboard";
-            this->Btn_Dashboard->Click += gcnew System::EventHandler(this, &CASHIER_DB::Btn_Dashboard_Click);
+            this->Btn_Costomers->TabIndex = 9;
+            this->Btn_Costomers->Values->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Btn_Costomers.Values.Image")));
+            this->Btn_Costomers->Values->Text = L"   Customers";
+            this->Btn_Costomers->Click += gcnew System::EventHandler(this, &CASHIER_DB::Btn_Costomers_Click);
             // 
             // Pl_Db
             // 
@@ -649,6 +575,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Pl_Db->Name = L"Pl_Db";
             this->Pl_Db->Size = System::Drawing::Size(809, 605);
             this->Pl_Db->TabIndex = 4;
+            this->Pl_Db->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &CASHIER_DB::Pl_Db_Paint);
             // 
             // CASHIER_DB
             // 
@@ -676,19 +603,34 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 
         }
 #pragma endregion
-    private: System::Void Btn_Dashboard_Click(System::Object^ sender, System::EventArgs^ e) {
-         Pl_Db->Controls->Clear();
-        CUSTOMERS^ CMform = gcnew CUSTOMERS();
-        CMform->TopLevel = false;
-        this->Pl_Db->Controls->Add(CMform);
-        CMform->Show();
-    }
 private: System::Void Btn_Products_Click(System::Object^ sender, System::EventArgs^ e) {
     Pl_Db->Controls->Clear();
-    PRODUCTS^ PROform = gcnew PRODUCTS();
-    PROform->TopLevel = false;
-    this->Pl_Db->Controls->Add(PROform);
-    PROform->Show();
+    CPRODUCTS^ CPROform = gcnew CPRODUCTS();
+    CPROform->TopLevel = false;
+    this->Pl_Db->Controls->Add(CPROform);
+    CPROform->Show();
+}
+private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
+    this->Close();
+}
+private: System::Void Pl_Db_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+    CUSTOMERS^ CMform = gcnew CUSTOMERS();
+    CMform->TopLevel = false;
+    this->Pl_Db->Controls->Add(CMform);
+    CMform->Show();
+}
+private: System::Void Btn_Dashboard_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void Btn_Costomers_Click(System::Object^ sender, System::EventArgs^ e) {
+    Pl_Db->Controls->Clear();
+
+}
+private: System::Void Btn_Orders_Click(System::Object^ sender, System::EventArgs^ e) {
+    Pl_Db->Controls->Clear();
+    ORDERS^ ORform = gcnew ORDERS();
+    ORform->TopLevel = false;
+    this->Pl_Db->Controls->Add(ORform);
+    ORform->Show();
 }
 };
 }

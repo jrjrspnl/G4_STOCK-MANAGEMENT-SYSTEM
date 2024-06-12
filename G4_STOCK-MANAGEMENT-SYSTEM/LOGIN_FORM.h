@@ -192,7 +192,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			// 
 			// Btn_Login
 			// 
-			this->Btn_Login->Location = System::Drawing::Point(116, 411);
+			this->Btn_Login->Location = System::Drawing::Point(126, 411);
 			this->Btn_Login->Name = L"Btn_Login";
 			this->Btn_Login->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(128)));

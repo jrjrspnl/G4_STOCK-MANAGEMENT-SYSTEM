@@ -133,9 +133,11 @@
     <ClCompile Include="ADMIN_DB.cpp" />
     <ClCompile Include="CASHIER_DB.cpp" />
     <ClCompile Include="CATEGORIES.cpp" />
+    <ClCompile Include="CPRODUCTS.cpp" />
     <ClCompile Include="CUSTOMERS.cpp" />
     <ClCompile Include="DASHBOARD.cpp" />
     <ClCompile Include="LOGIN_FORM.cpp" />
+    <ClCompile Include="ORDERS.cpp" />
     <ClCompile Include="PRODUCTS.cpp" />
     <ClCompile Include="USERS.cpp" />
   </ItemGroup>
@@ -149,6 +151,9 @@
     <ClInclude Include="CATEGORIES.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CPRODUCTS.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CUSTOMERS.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -156,6 +161,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="LOGIN_FORM.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ORDERS.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PRODUCTS.h">
@@ -175,6 +183,9 @@
     <EmbeddedResource Include="CATEGORIES.resx">
       <DependentUpon>CATEGORIES.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CPRODUCTS.resx">
+      <DependentUpon>CPRODUCTS.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CUSTOMERS.resx">
       <DependentUpon>CUSTOMERS.h</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN_FORM.resx">
       <DependentUpon>LOGIN_FORM.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORDERS.resx">
+      <DependentUpon>ORDERS.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRODUCTS.resx">
       <DependentUpon>PRODUCTS.h</DependentUpon>

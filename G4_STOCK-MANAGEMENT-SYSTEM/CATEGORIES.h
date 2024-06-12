@@ -79,23 +79,23 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 		void InitializeComponent(void)
 		{
             this->panel2 = (gcnew System::Windows::Forms::Panel());
-            this->kryptonTextBox2 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonTextBox());
-            this->label1 = (gcnew System::Windows::Forms::Label());
+            this->kryptonComboBox1 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonComboBox());
             this->kryptonButton4 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
             this->kryptonButton2 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
             this->kryptonButton1 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
             this->kryptonButton3 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
+            this->label1 = (gcnew System::Windows::Forms::Label());
+            this->kryptonTextBox2 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonTextBox());
             this->kryptonDataGridView1 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonDataGridView());
             this->ID = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->CATEGORY = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->DATE = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
             this->panel1 = (gcnew System::Windows::Forms::Panel());
             this->label9 = (gcnew System::Windows::Forms::Label());
-            this->kryptonComboBox1 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonComboBox());
             this->panel2->SuspendLayout();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonComboBox1))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonDataGridView1))->BeginInit();
             this->panel1->SuspendLayout();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonComboBox1))->BeginInit();
             this->SuspendLayout();
             // 
             // panel2
@@ -112,29 +112,21 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->panel2->Size = System::Drawing::Size(764, 208);
             this->panel2->TabIndex = 20;
             // 
-            // kryptonTextBox2
+            // kryptonComboBox1
             // 
-            this->kryptonTextBox2->Location = System::Drawing::Point(23, 44);
-            this->kryptonTextBox2->Name = L"kryptonTextBox2";
-            this->kryptonTextBox2->Size = System::Drawing::Size(193, 27);
-            this->kryptonTextBox2->StateActive->Back->Color1 = System::Drawing::Color::WhiteSmoke;
-            this->kryptonTextBox2->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+            this->kryptonComboBox1->DropDownWidth = 117;
+            this->kryptonComboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Admin", L"Employee" });
+            this->kryptonComboBox1->Location = System::Drawing::Point(23, 35);
+            this->kryptonComboBox1->Name = L"kryptonComboBox1";
+            this->kryptonComboBox1->Size = System::Drawing::Size(237, 25);
+            this->kryptonComboBox1->StateActive->ComboBox->Back->Color1 = System::Drawing::Color::WhiteSmoke;
+            this->kryptonComboBox1->StateActive->ComboBox->Border->Color1 = System::Drawing::Color::LightGray;
+            this->kryptonComboBox1->StateActive->ComboBox->Border->Color2 = System::Drawing::Color::LightGray;
+            this->kryptonComboBox1->StateActive->ComboBox->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->kryptonTextBox2->StateCommon->Border->Rounding = 5;
-            this->kryptonTextBox2->TabIndex = 2;
-            // 
-            // label1
-            // 
-            this->label1->AutoSize = true;
-            this->label1->BackColor = System::Drawing::Color::White;
-            this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->label1->Location = System::Drawing::Point(21, 16);
-            this->label1->Name = L"label1";
-            this->label1->Size = System::Drawing::Size(82, 16);
-            this->label1->TabIndex = 5;
-            this->label1->Text = L"Categories:";
+            this->kryptonComboBox1->StateActive->ComboBox->Border->Rounding = 5;
+            this->kryptonComboBox1->TabIndex = 19;
             // 
             // kryptonButton4
             // 
@@ -301,6 +293,30 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->kryptonButton3->TabIndex = 15;
             this->kryptonButton3->Values->Text = L"CLEAR";
             // 
+            // label1
+            // 
+            this->label1->AutoSize = true;
+            this->label1->BackColor = System::Drawing::Color::White;
+            this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label1->Location = System::Drawing::Point(21, 16);
+            this->label1->Name = L"label1";
+            this->label1->Size = System::Drawing::Size(72, 16);
+            this->label1->TabIndex = 5;
+            this->label1->Text = L"Category:";
+            // 
+            // kryptonTextBox2
+            // 
+            this->kryptonTextBox2->Location = System::Drawing::Point(23, 44);
+            this->kryptonTextBox2->Name = L"kryptonTextBox2";
+            this->kryptonTextBox2->Size = System::Drawing::Size(193, 27);
+            this->kryptonTextBox2->StateActive->Back->Color1 = System::Drawing::Color::WhiteSmoke;
+            this->kryptonTextBox2->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
+            this->kryptonTextBox2->StateCommon->Border->Rounding = 5;
+            this->kryptonTextBox2->TabIndex = 2;
+            // 
             // kryptonDataGridView1
             // 
             this->kryptonDataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
@@ -368,22 +384,6 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label9->TabIndex = 19;
             this->label9->Text = L"All Categories";
             // 
-            // kryptonComboBox1
-            // 
-            this->kryptonComboBox1->DropDownWidth = 117;
-            this->kryptonComboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Admin", L"Employee" });
-            this->kryptonComboBox1->Location = System::Drawing::Point(23, 35);
-            this->kryptonComboBox1->Name = L"kryptonComboBox1";
-            this->kryptonComboBox1->Size = System::Drawing::Size(237, 25);
-            this->kryptonComboBox1->StateActive->ComboBox->Back->Color1 = System::Drawing::Color::WhiteSmoke;
-            this->kryptonComboBox1->StateActive->ComboBox->Border->Color1 = System::Drawing::Color::LightGray;
-            this->kryptonComboBox1->StateActive->ComboBox->Border->Color2 = System::Drawing::Color::LightGray;
-            this->kryptonComboBox1->StateActive->ComboBox->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->kryptonComboBox1->StateActive->ComboBox->Border->Rounding = 5;
-            this->kryptonComboBox1->TabIndex = 19;
-            // 
             // CATEGORIES
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -399,10 +399,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Text = L"CATEGORIES";
             this->panel2->ResumeLayout(false);
             this->panel2->PerformLayout();
+            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonComboBox1))->EndInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonDataGridView1))->EndInit();
             this->panel1->ResumeLayout(false);
             this->panel1->PerformLayout();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonComboBox1))->EndInit();
             this->ResumeLayout(false);
 
         }

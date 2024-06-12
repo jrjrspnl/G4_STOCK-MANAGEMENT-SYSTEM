@@ -39,6 +39,12 @@
     <ClCompile Include="CASHIER_DB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ORDERS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPRODUCTS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LOGIN_FORM.h">
@@ -63,6 +69,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CASHIER_DB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ORDERS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPRODUCTS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
