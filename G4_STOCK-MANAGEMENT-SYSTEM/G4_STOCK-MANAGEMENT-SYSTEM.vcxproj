@@ -133,6 +133,7 @@
     <ClCompile Include="ADMIN_DB.cpp" />
     <ClCompile Include="CASHIER_DB.cpp" />
     <ClCompile Include="CATEGORIES.cpp" />
+    <ClCompile Include="CCUSTOMERS.cpp" />
     <ClCompile Include="CPRODUCTS.cpp" />
     <ClCompile Include="CUSTOMERS.cpp" />
     <ClCompile Include="DASHBOARD.cpp" />
@@ -149,6 +150,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CATEGORIES.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CCUSTOMERS.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CPRODUCTS.h">
@@ -182,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CATEGORIES.resx">
       <DependentUpon>CATEGORIES.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CCUSTOMERS.resx">
+      <DependentUpon>CCUSTOMERS.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPRODUCTS.resx">
       <DependentUpon>CPRODUCTS.h</DependentUpon>

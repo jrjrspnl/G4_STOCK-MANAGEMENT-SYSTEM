@@ -54,6 +54,15 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column8;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column9;
 
+
+
+
+
+
+
+
+
+
 	protected:
 
 
@@ -84,8 +93,8 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 		void InitializeComponent(void)
 		{
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->kryptonDataGridView2 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonDataGridView());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -104,22 +113,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			this->panel1->BackColor = System::Drawing::Color::White;
 			this->panel1->Controls->Add(this->kryptonDataGridView2);
 			this->panel1->Controls->Add(this->label9);
-			this->panel1->Location = System::Drawing::Point(22, 26);
+			this->panel1->Location = System::Drawing::Point(12, 26);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(764, 547);
+			this->panel1->Size = System::Drawing::Size(1010, 547);
 			this->panel1->TabIndex = 19;
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->BackColor = System::Drawing::Color::Transparent;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(19, 20);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(118, 23);
-			this->label9->TabIndex = 7;
-			this->label9->Text = L"All Products";
 			// 
 			// kryptonDataGridView2
 			// 
@@ -129,9 +126,9 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 					this->dataGridViewTextBoxColumn2, this->dataGridViewTextBoxColumn3, this->dataGridViewTextBoxColumn4, this->dataGridViewTextBoxColumn5,
 					this->Column6, this->Column7, this->Column8, this->Column9
 			});
-			this->kryptonDataGridView2->Location = System::Drawing::Point(21, 63);
+			this->kryptonDataGridView2->Location = System::Drawing::Point(32, 64);
 			this->kryptonDataGridView2->Name = L"kryptonDataGridView2";
-			this->kryptonDataGridView2->Size = System::Drawing::Size(724, 456);
+			this->kryptonDataGridView2->Size = System::Drawing::Size(948, 456);
 			this->kryptonDataGridView2->StateCommon->Background->Color1 = System::Drawing::Color::Gainsboro;
 			this->kryptonDataGridView2->StateCommon->Background->Color2 = System::Drawing::Color::Gainsboro;
 			this->kryptonDataGridView2->StateCommon->BackStyle = ComponentFactory::Krypton::Toolkit::PaletteBackStyle::GridBackgroundList;
@@ -150,66 +147,70 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 				| ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
 			this->kryptonDataGridView2->TabIndex = 18;
 			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->BackColor = System::Drawing::Color::Transparent;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->Location = System::Drawing::Point(19, 20);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(118, 23);
+			this->label9->TabIndex = 7;
+			this->label9->Text = L"All Products";
+			// 
 			// dataGridViewTextBoxColumn1
 			// 
 			this->dataGridViewTextBoxColumn1->HeaderText = L"ID";
 			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
-			this->dataGridViewTextBoxColumn1->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn2
 			// 
 			this->dataGridViewTextBoxColumn2->HeaderText = L"ProductID";
 			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
-			this->dataGridViewTextBoxColumn2->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn3
 			// 
 			this->dataGridViewTextBoxColumn3->HeaderText = L"ProductName";
 			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
-			this->dataGridViewTextBoxColumn3->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn4
 			// 
 			this->dataGridViewTextBoxColumn4->HeaderText = L"Category";
 			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
-			this->dataGridViewTextBoxColumn4->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn5
 			// 
 			this->dataGridViewTextBoxColumn5->HeaderText = L"Price";
 			this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
-			this->dataGridViewTextBoxColumn5->Width = 75;
 			// 
 			// Column6
 			// 
 			this->Column6->HeaderText = L"Stock";
 			this->Column6->Name = L"Column6";
-			this->Column6->Width = 75;
 			// 
 			// Column7
 			// 
 			this->Column7->HeaderText = L"ImagePath";
 			this->Column7->Name = L"Column7";
-			this->Column7->Width = 75;
 			// 
 			// Column8
 			// 
 			this->Column8->HeaderText = L"Status";
 			this->Column8->Name = L"Column8";
-			this->Column8->Width = 75;
 			// 
 			// Column9
 			// 
 			this->Column9->HeaderText = L"Date";
 			this->Column9->Name = L"Column9";
-			this->Column9->Width = 83;
+			this->Column9->Width = 107;
 			// 
 			// CPRODUCTS
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::WhiteSmoke;
-			this->ClientSize = System::Drawing::Size(809, 605);
+			this->ClientSize = System::Drawing::Size(1034, 608);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"CPRODUCTS";

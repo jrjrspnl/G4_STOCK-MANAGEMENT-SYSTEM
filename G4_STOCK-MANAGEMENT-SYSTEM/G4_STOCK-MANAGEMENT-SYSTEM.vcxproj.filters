@@ -45,6 +45,9 @@
     <ClCompile Include="CPRODUCTS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CCUSTOMERS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LOGIN_FORM.h">
@@ -75,6 +78,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CPRODUCTS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCUSTOMERS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
