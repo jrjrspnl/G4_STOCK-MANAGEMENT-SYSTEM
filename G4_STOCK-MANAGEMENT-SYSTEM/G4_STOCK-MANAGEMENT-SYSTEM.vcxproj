@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ADMIN_DB.cpp" />
+    <ClCompile Include="CASHIER_DB.cpp" />
     <ClCompile Include="CATEGORIES.cpp" />
     <ClCompile Include="CUSTOMERS.cpp" />
     <ClCompile Include="DASHBOARD.cpp" />
@@ -140,6 +141,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ADMIN_DB.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CASHIER_DB.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CATEGORIES.h">
@@ -164,6 +168,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ADMIN_DB.resx">
       <DependentUpon>ADMIN_DB.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CASHIER_DB.resx">
+      <DependentUpon>CASHIER_DB.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CATEGORIES.resx">
       <DependentUpon>CATEGORIES.h</DependentUpon>

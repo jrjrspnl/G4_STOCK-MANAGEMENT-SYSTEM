@@ -36,6 +36,9 @@
     <ClCompile Include="DASHBOARD.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CASHIER_DB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LOGIN_FORM.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DASHBOARD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CASHIER_DB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
