@@ -62,16 +62,16 @@ namespace G4STOCKMANAGEMENTSYSTEM {
                 {
                     connection->Open();
 
-                    System::String^ selectData = "SELECT * FROM categories";
+              
+                    System::String^ selectData = "SELECT DISTINCT category FROM products WHERE status = 'Available'";
 
                     SqlCommand^ cmd = gcnew SqlCommand(selectData, connection);
                     SqlDataReader^ reader = cmd->ExecuteReader();
 
-
                     Cbox_Cat->Items->Clear();
                     while (reader->Read())
                     {
-                        System::String^ item = reader->GetString(1);
+                        System::String^ item = reader->GetString(0);
                         Cbox_Cat->Items->Add(item);
                     }
                 }
@@ -85,6 +85,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
                 }
             }
         }
+
         void AllOrdersData() {
 
             OrdersData^ oData = gcnew OrdersData();
@@ -1225,6 +1226,7 @@ private: System::Void Btn_Pay_Click(System::Object^ sender, System::EventArgs^ e
 
         if (enteredAmount < totalPrice) {
             MessageBox::Show("Entered amount is not enough to cover the total price!", "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            Lbl_Change->Text = "Insufficient funds";
             return;
         }
 
@@ -1240,7 +1242,9 @@ private: System::Void Btn_Pay_Click(System::Object^ sender, System::EventArgs^ e
                     cmd->Parameters->AddWithValue("@cID", idGen);
                     cmd->Parameters->AddWithValue("@totalPrice", Lbl_TotalPrice->Text);
                     cmd->Parameters->AddWithValue("@amount", Txt_Amount->Text);
-                    cmd->Parameters->AddWithValue("@change", Lbl_Change->Text);
+
+                    float change = enteredAmount - totalPrice;
+                    cmd->Parameters->AddWithValue("@change", change.ToString("0.00"));
 
                     DateTime now = DateTime::Now;
                     cmd->Parameters->AddWithValue("@date", now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -1261,32 +1265,28 @@ private: System::Void Btn_Pay_Click(System::Object^ sender, System::EventArgs^ e
 }
 
 
+
 private: System::Void Txt_Amount_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
-    if (e->KeyCode == Keys::Enter)
-    {
-        try
-        {
+    if (e->KeyCode == Keys::Enter) {
+        try {
             float getAmount = Convert::ToSingle(Txt_Amount->Text);
             float getChange = (getAmount - totalPrice);
 
-            if (getChange <= -1)
-            {
-                Txt_Amount->Text = "";
-                Lbl_Change->Text = "";
+            if (getChange < 0) {
+                Lbl_Change->Text = "Insufficient funds";
             }
-            else
-            {
+            else {
                 Lbl_Change->Text = getChange.ToString("0.00");
             }
         }
-        catch (Exception^)
-        {
-            MessageBox::Show("Something went wrong!", "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        catch (Exception^) {
+            MessageBox::Show("Invalid amount entered!", "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
             Txt_Amount->Text = "";
             Lbl_Change->Text = "";
         }
     }
 }
+
 
 
    private: int rowIndex = 0;
@@ -1377,17 +1377,16 @@ private: System::Void printDocument1_PrintPage(System::Object^ sender, System::D
     }
 
     int labelMargin = static_cast<int>(Math::Min(rSpace, 200.0f));
-
-    DateTime today = DateTime::Now.Date;
+    DateTime now = DateTime::Now;
 
     float labelX = e->MarginBounds.Right - e->Graphics->MeasureString("--------------------------------------------------------", labelFont).Width;
 
     y = e->MarginBounds.Bottom - labelMargin - labelFont->GetHeight(e->Graphics);
-    e->Graphics->DrawString("Total Price: \t$" + totalPrice + "\nAmount: \t$" + Txt_Amount->Text->Trim() + "\n\t\t------------------------\nChange: \t$" + Lbl_Change->Text->Trim(), labelFont, Brushes::Black, labelX, y);
+    e->Graphics->DrawString("Total Price: \tP" + totalPrice + "\nAmount: \tP" + Txt_Amount->Text->Trim() + "\n\t\t------------------------\nChange: \tP" + Lbl_Change->Text->Trim(), labelFont, Brushes::Black, labelX, y);
 
     labelMargin = static_cast<int>(Math::Min(rSpace, -40.0f));
 
-    String^ labelText = today.ToString("yyyy-MM-dd");
+    String^ labelText = now.ToString("yyyy-MM-dd");
     y = e->MarginBounds.Bottom - labelMargin - labelFont->GetHeight(e->Graphics);
     e->Graphics->DrawString(labelText, labelFont, Brushes::Black, e->MarginBounds.Right - e->Graphics->MeasureString("------------------", labelFont).Width, y);
     }
