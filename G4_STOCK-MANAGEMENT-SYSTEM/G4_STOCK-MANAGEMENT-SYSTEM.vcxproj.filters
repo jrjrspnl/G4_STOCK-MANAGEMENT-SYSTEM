@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Product_Directory">
+      <UniqueIdentifier>{3e6f343a-47d6-45f0-95ce-cff7d6635dde}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LOGIN_FORM.cpp">
@@ -48,6 +51,21 @@
     <ClCompile Include="CCUSTOMERS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UsersData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CategoriesData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProductsData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OrdersData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomersData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LOGIN_FORM.h">
@@ -81,6 +99,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CCUSTOMERS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UsersData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CategoriesData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProductsData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OrdersData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomersData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

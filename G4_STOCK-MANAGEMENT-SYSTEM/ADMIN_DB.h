@@ -6,6 +6,7 @@
 #include "PRODUCTS.h"
 #include "USERS.h"
 
+
 namespace G4STOCKMANAGEMENTSYSTEM {
 
 	using namespace System;
@@ -21,13 +22,21 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 	public ref class ADMIN_DB : public System::Windows::Forms::Form
 	{
 	public:
+        Form^ obj;
 		ADMIN_DB(void)
 		{
-			InitializeComponent();
+            InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
 		}
+        ADMIN_DB(Form ^obj1) {
+            obj = obj1;
+            InitializeComponent();
+            //
+            //TODO: Add the constructor code here
+            //
+        }
 
 	protected:
 		/// <summary>
@@ -75,6 +84,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
     private: System::Windows::Forms::Panel^ panel2;
     private: System::Windows::Forms::Label^ label3;
     private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_Customers;
+
 
 
 
@@ -642,6 +652,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Btn_Logout->TabIndex = 10;
             this->Btn_Logout->Values->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Btn_Logout.Values.Image")));
             this->Btn_Logout->Values->Text = L"   Logout";
+            this->Btn_Logout->Click += gcnew System::EventHandler(this, &ADMIN_DB::Btn_Logout_Click);
             // 
             // Btn_Users
             // 
@@ -903,7 +914,14 @@ private: System::Void Pl_Db_Paint(System::Object^ sender, System::Windows::Forms
       
 }
 private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
-    this->Close();
+    Application::Exit();
+}
+private: System::Void Btn_Logout_Click(System::Object^ sender, System::EventArgs^ e) {
+    
+    if (MessageBox::Show("Are you sure you want to logout?", "Confirmation Message", System::Windows::Forms::MessageBoxButtons::YesNo, System::Windows::Forms::MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+        this->Hide();
+        obj->Show();
+    }
 }
 };
 }

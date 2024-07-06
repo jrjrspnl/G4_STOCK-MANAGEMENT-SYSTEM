@@ -1,4 +1,5 @@
 #pragma once
+#include "CustomersData.h"
 
 namespace G4STOCKMANAGEMENTSYSTEM {
 
@@ -18,9 +19,17 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 		CCUSTOMERS(void)
 		{
 			InitializeComponent();
+			displayCCustomersData();
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+		void displayCCustomersData() {
+			CustomersData^ cData = gcnew CustomersData();
+
+			List<CustomersData^>^ listData = cData->AllCustomersData();
+			Table_CCustomers->DataSource = listData;
+
 		}
 
 	protected:
@@ -37,12 +46,14 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::Label^ label9;
 	protected:
 	private: System::Windows::Forms::Panel^ panel1;
-	private: ComponentFactory::Krypton::Toolkit::KryptonDataGridView^ kryptonDataGridView1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
+	private: ComponentFactory::Krypton::Toolkit::KryptonDataGridView^ Table_CCustomers;
+
+
+
+
+
+
+
 
 
 
@@ -77,14 +88,9 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 		{
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->kryptonDataGridView1 = (gcnew ComponentFactory::Krypton::Toolkit::KryptonDataGridView());
-			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Table_CCustomers = (gcnew ComponentFactory::Krypton::Toolkit::KryptonDataGridView());
 			this->panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonDataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Table_CCustomers))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label9
@@ -102,70 +108,39 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::White;
-			this->panel1->Controls->Add(this->kryptonDataGridView1);
+			this->panel1->Controls->Add(this->Table_CCustomers);
 			this->panel1->Controls->Add(this->label9);
 			this->panel1->Location = System::Drawing::Point(12, 26);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1010, 401);
 			this->panel1->TabIndex = 20;
 			// 
-			// kryptonDataGridView1
+			// Table_CCustomers
 			// 
-			this->kryptonDataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->kryptonDataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
-				this->Column1,
-					this->Column2, this->Column3, this->Column4, this->Column5
-			});
-			this->kryptonDataGridView1->Location = System::Drawing::Point(32, 64);
-			this->kryptonDataGridView1->Name = L"kryptonDataGridView1";
-			this->kryptonDataGridView1->Size = System::Drawing::Size(947, 317);
-			this->kryptonDataGridView1->StateCommon->Background->Color1 = System::Drawing::Color::Gainsboro;
-			this->kryptonDataGridView1->StateCommon->Background->Color2 = System::Drawing::Color::Gainsboro;
-			this->kryptonDataGridView1->StateCommon->BackStyle = ComponentFactory::Krypton::Toolkit::PaletteBackStyle::GridBackgroundList;
-			this->kryptonDataGridView1->StateCommon->DataCell->Back->Color1 = System::Drawing::Color::White;
-			this->kryptonDataGridView1->StateCommon->DataCell->Back->Color2 = System::Drawing::Color::White;
-			this->kryptonDataGridView1->StateCommon->HeaderColumn->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+			this->Table_CCustomers->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->Table_CCustomers->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->Table_CCustomers->Location = System::Drawing::Point(32, 64);
+			this->Table_CCustomers->Name = L"Table_CCustomers";
+			this->Table_CCustomers->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->Table_CCustomers->RowHeadersVisible = false;
+			this->Table_CCustomers->Size = System::Drawing::Size(947, 317);
+			this->Table_CCustomers->StateCommon->Background->Color1 = System::Drawing::Color::Gainsboro;
+			this->Table_CCustomers->StateCommon->Background->Color2 = System::Drawing::Color::Gainsboro;
+			this->Table_CCustomers->StateCommon->BackStyle = ComponentFactory::Krypton::Toolkit::PaletteBackStyle::GridBackgroundList;
+			this->Table_CCustomers->StateCommon->DataCell->Back->Color1 = System::Drawing::Color::White;
+			this->Table_CCustomers->StateCommon->DataCell->Back->Color2 = System::Drawing::Color::White;
+			this->Table_CCustomers->StateCommon->HeaderColumn->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-			this->kryptonDataGridView1->StateCommon->HeaderColumn->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+			this->Table_CCustomers->StateCommon->HeaderColumn->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-			this->kryptonDataGridView1->StateCommon->HeaderColumn->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+			this->Table_CCustomers->StateCommon->HeaderColumn->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-			this->kryptonDataGridView1->StateCommon->HeaderColumn->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+			this->Table_CCustomers->StateCommon->HeaderColumn->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
-			this->kryptonDataGridView1->StateCommon->HeaderColumn->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+			this->Table_CCustomers->StateCommon->HeaderColumn->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
 				| ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
 				| ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-			this->kryptonDataGridView1->TabIndex = 18;
-			// 
-			// Column1
-			// 
-			this->Column1->HeaderText = L"CustomerID";
-			this->Column1->Name = L"Column1";
-			this->Column1->Width = 180;
-			// 
-			// Column2
-			// 
-			this->Column2->HeaderText = L"TotalPrice";
-			this->Column2->Name = L"Column2";
-			this->Column2->Width = 180;
-			// 
-			// Column3
-			// 
-			this->Column3->HeaderText = L"Amount";
-			this->Column3->Name = L"Column3";
-			this->Column3->Width = 180;
-			// 
-			// Column4
-			// 
-			this->Column4->HeaderText = L"Change";
-			this->Column4->Name = L"Column4";
-			this->Column4->Width = 180;
-			// 
-			// Column5
-			// 
-			this->Column5->HeaderText = L"Date";
-			this->Column5->Name = L"Column5";
-			this->Column5->Width = 187;
+			this->Table_CCustomers->TabIndex = 23;
 			// 
 			// CCUSTOMERS
 			// 
@@ -179,7 +154,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			this->Text = L"CCUSTOMERS";
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->kryptonDataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Table_CCustomers))->EndInit();
 			this->ResumeLayout(false);
 
 		}

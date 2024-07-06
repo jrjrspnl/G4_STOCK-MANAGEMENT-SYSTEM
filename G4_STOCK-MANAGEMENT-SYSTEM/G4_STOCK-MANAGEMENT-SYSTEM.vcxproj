@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -133,14 +133,19 @@
     <ClCompile Include="ADMIN_DB.cpp" />
     <ClCompile Include="CASHIER_DB.cpp" />
     <ClCompile Include="CATEGORIES.cpp" />
+    <ClCompile Include="CategoriesData.cpp" />
     <ClCompile Include="CCUSTOMERS.cpp" />
     <ClCompile Include="CPRODUCTS.cpp" />
     <ClCompile Include="CUSTOMERS.cpp" />
+    <ClCompile Include="CustomersData.cpp" />
     <ClCompile Include="DASHBOARD.cpp" />
     <ClCompile Include="LOGIN_FORM.cpp" />
     <ClCompile Include="ORDERS.cpp" />
+    <ClCompile Include="OrdersData.cpp" />
     <ClCompile Include="PRODUCTS.cpp" />
+    <ClCompile Include="ProductsData.cpp" />
     <ClCompile Include="USERS.cpp" />
+    <ClCompile Include="UsersData.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ADMIN_DB.h">
@@ -152,6 +157,7 @@
     <ClInclude Include="CATEGORIES.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CategoriesData.h" />
     <ClInclude Include="CCUSTOMERS.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -161,6 +167,7 @@
     <ClInclude Include="CUSTOMERS.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CustomersData.h" />
     <ClInclude Include="DASHBOARD.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -170,12 +177,15 @@
     <ClInclude Include="ORDERS.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="OrdersData.h" />
     <ClInclude Include="PRODUCTS.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ProductsData.h" />
     <ClInclude Include="USERS.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="UsersData.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ADMIN_DB.resx">

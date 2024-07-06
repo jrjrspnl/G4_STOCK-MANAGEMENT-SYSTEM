@@ -1,6 +1,8 @@
 #pragma once
 
 #include "ADMIN_DB.h"
+#include "CASHIER_DB.h"
+
 
 namespace G4STOCKMANAGEMENTSYSTEM {
 
@@ -10,12 +12,14 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for LOGIN_FORM
 	/// </summary>
 	public ref class LOGIN_FORM : public System::Windows::Forms::Form
 	{
+		SqlConnection^ connection = gcnew SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\jimwiel\\Documents\\stock.mdf;Integrated Security=True;Connect Timeout=30");
 	public:
 		LOGIN_FORM(void)
 		{
@@ -24,7 +28,17 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			//TODO: Add the constructor code here
 			//
 		}
-
+		bool checkConnection()
+		{
+			if (connection->State == ConnectionState::Closed)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -49,6 +63,14 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+
+
+
+
+
+
+
 
 
 	protected:
@@ -57,7 +79,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -68,6 +90,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(LOGIN_FORM::typeid));
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -77,11 +100,13 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			this->Btn_Login = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel2
 			// 
+			this->panel2->Controls->Add(this->pictureBox3);
 			this->panel2->Controls->Add(this->pictureBox1);
 			this->panel2->Controls->Add(this->label3);
 			this->panel2->Controls->Add(this->label2);
@@ -93,6 +118,17 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(354, 536);
 			this->panel2->TabIndex = 4;
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.BackgroundImage")));
+			this->pictureBox3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->pictureBox3->Location = System::Drawing::Point(309, 8);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(37, 28);
+			this->pictureBox3->TabIndex = 10;
+			this->pictureBox3->TabStop = false;
+			this->pictureBox3->Click += gcnew System::EventHandler(this, &LOGIN_FORM::pictureBox3_Click);
 			// 
 			// pictureBox1
 			// 
@@ -288,6 +324,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			this->Text = L"LOGIN_FORM";
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
@@ -317,13 +354,77 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			Txt_Password->ForeColor = System::Drawing::Color::Silver;
 		}
 	}
-private: System::Void Btn_Login_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	ADMIN_DB^ admindb = gcnew ADMIN_DB();
+	private: System::Void Btn_Login_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	admindb->Show();
+		if (checkConnection()) {
+			try {
+				connection->Open();
 
-	this->Hide();
+				System::String^ selectData = "SELECT COUNT (*) FROM users WHERE username = @usern AND password = @pass AND status = @status";
+				SqlCommand^ cmd = gcnew SqlCommand(selectData, connection);
+				cmd->Parameters->AddWithValue("@usern", Txt_Username->Text->Trim());
+				cmd->Parameters->AddWithValue("@pass", Txt_Password->Text->Trim());
+				cmd->Parameters->AddWithValue("@status","Active");
+
+				int rowCount = (int)cmd->ExecuteScalar();
+
+				if (rowCount > 0) {
+
+					System::String^ selectRole= "SELECT role FROM users WHERE username = @usern AND password = @pass";
+
+					SqlCommand^ getRole = gcnew SqlCommand(selectRole, connection); {
+						getRole->Parameters->AddWithValue("@usern", Txt_Username->Text->Trim());
+						getRole->Parameters->AddWithValue("@pass", Txt_Password->Text->Trim());
+
+						System::String^ userRole = (System::String^)getRole->ExecuteScalar();
+
+						MessageBox::Show("Login Successfully!", "Information Message", MessageBoxButtons::OK, MessageBoxIcon::Information);
+
+						if (userRole == "Admin") {
+							Txt_Username->Text = "";
+							Txt_Password->Text = "";
+							Txt_Username->Focus();
+							this->Hide();
+							ADMIN_DB^ obj1 = gcnew ADMIN_DB(this);
+							obj1->ShowDialog();
+						}
+						else if (userRole == "Employee") {
+							Txt_Username->Text = "";
+							Txt_Password->Text = "";
+							Txt_Username->Focus();
+							this->Hide();
+							CASHIER_DB^ ob1 = gcnew CASHIER_DB(this);
+							ob1->ShowDialog();
+												
+						}				
+					}
+				}
+				else {
+					MessageBox::Show("Incorrect password or username!", "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					Txt_Username->Text = "";
+					Txt_Password->Text = "";
+					Txt_Username->Focus();
+				}
+			}
+			catch (Exception^ ex) {
+				MessageBox::Show("Connection Failed: " + ex->Message, "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+			finally {
+				connection->Close();
+			}
+		}
+	}
+	
+	private: System::Void pictureBox3_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		Application::Exit();
+	}
+	};
+
 }
-};
-}
+
+
+
+
+
