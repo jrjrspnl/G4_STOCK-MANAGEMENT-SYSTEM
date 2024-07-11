@@ -55,8 +55,17 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 
 
 	private: System::Windows::Forms::Panel^ panel2;
-	private: ComponentFactory::Krypton::Toolkit::KryptonTextBox^ Txt_Password;
-	private: ComponentFactory::Krypton::Toolkit::KryptonTextBox^ Txt_Username;
+
+
+
+
+
+
+
+
+
+
+
 	private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_Login;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label2;
@@ -64,6 +73,11 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::CheckBox^ Check_ShowPass;
+	private: ComponentFactory::Krypton::Toolkit::KryptonTextBox^ Txt_Username;
+	private: ComponentFactory::Krypton::Toolkit::KryptonTextBox^ Txt_Password;
+
+
 
 
 
@@ -90,14 +104,15 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(LOGIN_FORM::typeid));
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->Check_ShowPass = (gcnew System::Windows::Forms::CheckBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->Txt_Password = (gcnew ComponentFactory::Krypton::Toolkit::KryptonTextBox());
 			this->Txt_Username = (gcnew ComponentFactory::Krypton::Toolkit::KryptonTextBox());
 			this->Btn_Login = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
+			this->Txt_Password = (gcnew ComponentFactory::Krypton::Toolkit::KryptonTextBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -106,18 +121,29 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			// 
 			// panel2
 			// 
+			this->panel2->Controls->Add(this->Check_ShowPass);
 			this->panel2->Controls->Add(this->pictureBox3);
 			this->panel2->Controls->Add(this->pictureBox1);
 			this->panel2->Controls->Add(this->label3);
 			this->panel2->Controls->Add(this->label2);
 			this->panel2->Controls->Add(this->label1);
-			this->panel2->Controls->Add(this->Txt_Password);
 			this->panel2->Controls->Add(this->Txt_Username);
 			this->panel2->Controls->Add(this->Btn_Login);
+			this->panel2->Controls->Add(this->Txt_Password);
 			this->panel2->Location = System::Drawing::Point(570, 12);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(354, 536);
 			this->panel2->TabIndex = 4;
+			// 
+			// Check_ShowPass
+			// 
+			this->Check_ShowPass->AutoSize = true;
+			this->Check_ShowPass->Location = System::Drawing::Point(280, 362);
+			this->Check_ShowPass->Name = L"Check_ShowPass";
+			this->Check_ShowPass->Size = System::Drawing::Size(15, 14);
+			this->Check_ShowPass->TabIndex = 11;
+			this->Check_ShowPass->UseVisualStyleBackColor = true;
+			this->Check_ShowPass->CheckedChanged += gcnew System::EventHandler(this, &LOGIN_FORM::Check_ShowPass_CheckedChanged);
 			// 
 			// pictureBox3
 			// 
@@ -173,36 +199,9 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Username:";
 			// 
-			// Txt_Password
-			// 
-			this->Txt_Password->Location = System::Drawing::Point(47, 336);
-			this->Txt_Password->Multiline = true;
-			this->Txt_Password->Name = L"Txt_Password";
-			this->Txt_Password->PasswordChar = '*';
-			this->Txt_Password->Size = System::Drawing::Size(259, 47);
-			this->Txt_Password->StateCommon->Back->Color1 = System::Drawing::Color::White;
-			this->Txt_Password->StateCommon->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->Txt_Password->StateCommon->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->Txt_Password->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
-				| ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
-				| ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-			this->Txt_Password->StateCommon->Border->GraphicsHint = ComponentFactory::Krypton::Toolkit::PaletteGraphicsHint::AntiAlias;
-			this->Txt_Password->StateCommon->Border->Rounding = 20;
-			this->Txt_Password->StateCommon->Border->Width = 1;
-			this->Txt_Password->StateCommon->Content->Color1 = System::Drawing::Color::Gray;
-			this->Txt_Password->StateCommon->Content->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->Txt_Password->StateCommon->Content->Padding = System::Windows::Forms::Padding(10, 8, 10, 0);
-			this->Txt_Password->TabIndex = 1;
-			this->Txt_Password->Text = L"Enter Password";
-			this->Txt_Password->Enter += gcnew System::EventHandler(this, &LOGIN_FORM::Txt_Password_Enter);
-			this->Txt_Password->Leave += gcnew System::EventHandler(this, &LOGIN_FORM::Txt_Password_Leave);
-			// 
 			// Txt_Username
 			// 
-			this->Txt_Username->Location = System::Drawing::Point(47, 258);
+			this->Txt_Username->Location = System::Drawing::Point(51, 263);
 			this->Txt_Username->Multiline = true;
 			this->Txt_Username->Name = L"Txt_Username";
 			this->Txt_Username->Size = System::Drawing::Size(259, 47);
@@ -301,6 +300,34 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			this->Btn_Login->Values->Text = L"LOGIN";
 			this->Btn_Login->Click += gcnew System::EventHandler(this, &LOGIN_FORM::Btn_Login_Click);
 			// 
+			// Txt_Password
+			// 
+			this->Txt_Password->Location = System::Drawing::Point(51, 344);
+			this->Txt_Password->Multiline = true;
+			this->Txt_Password->Name = L"Txt_Password";
+			this->Txt_Password->PasswordChar = '*';
+			this->Txt_Password->Size = System::Drawing::Size(259, 47);
+			this->Txt_Password->StateCommon->Back->Color1 = System::Drawing::Color::White;
+			this->Txt_Password->StateCommon->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->Txt_Password->StateCommon->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->Txt_Password->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+				| ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
+				| ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
+			this->Txt_Password->StateCommon->Border->GraphicsHint = ComponentFactory::Krypton::Toolkit::PaletteGraphicsHint::AntiAlias;
+			this->Txt_Password->StateCommon->Border->Rounding = 20;
+			this->Txt_Password->StateCommon->Border->Width = 1;
+			this->Txt_Password->StateCommon->Content->Color1 = System::Drawing::Color::Gray;
+			this->Txt_Password->StateCommon->Content->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->Txt_Password->StateCommon->Content->Padding = System::Windows::Forms::Padding(10, 5, 5, 5);
+			this->Txt_Password->TabIndex = 0;
+			this->Txt_Password->Text = L"*************";
+			this->Txt_Password->WordWrap = false;
+			this->Txt_Password->Enter += gcnew System::EventHandler(this, &LOGIN_FORM::Txt_Password_Enter);
+			this->Txt_Password->Leave += gcnew System::EventHandler(this, &LOGIN_FORM::Txt_Password_Leave);
+			// 
 			// panel1
 			// 
 			this->panel1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel1.BackgroundImage")));
@@ -336,25 +363,31 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			Txt_Username->ForeColor = System::Drawing::Color::Black;
 		}
 	}
-	private: System::Void Txt_Username_Leave(System::Object^ sender, System::EventArgs^ e) {
-		if (Txt_Username->Text == "") {
-			Txt_Username->Text = "Enter Username";
-			Txt_Username->ForeColor = System::Drawing::Color::Silver;
-		}
+private: System::Void Txt_Username_Leave(System::Object^ sender, System::EventArgs^ e) {
+	if (Txt_Username->Text == "") {
+		Txt_Username->Text = "Enter Username";
+		Txt_Username->ForeColor = System::Drawing::Color::Silver;
 	}
-	private: System::Void Txt_Password_Enter(System::Object^ sender, System::EventArgs^ e) {
-		if (Txt_Password->Text == "Enter Password") {
-			Txt_Password->Text = "";
-			Txt_Password->ForeColor = System::Drawing::Color::Black;
-		}
+}
+private: System::Void Txt_Password_Enter(System::Object^ sender, System::EventArgs^ e) {
+	 if (Txt_Password->Text == "*************") {
+		Txt_Password->Text = "";
+		Txt_Password->ForeColor = System::Drawing::Color::Black;
+		Txt_Password->UseSystemPasswordChar = Check_ShowPass->Checked;
 	}
-	private: System::Void Txt_Password_Leave(System::Object^ sender, System::EventArgs^ e) {
-		if (Txt_Password->Text == "") {
-			Txt_Password->Text = "Enter Password";
-			Txt_Password->ForeColor = System::Drawing::Color::Silver;
-		}
+}
+private: System::Void Txt_Password_Leave(System::Object^ sender, System::EventArgs^ e) {
+	if (Txt_Password->Text == "") {
+		Txt_Password->UseSystemPasswordChar = true;
+		Txt_Password->Text = "*************";
+		Txt_Password->ForeColor = System::Drawing::Color::Silver;
 	}
-
+}
+private: System::Void Check_ShowPass_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (Txt_Password->Text != "Enter Password") { 
+		Txt_Password->UseSystemPasswordChar = Check_ShowPass->Checked;
+	}
+}
 	private: System::Void Btn_Login_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		if (checkConnection()) {
@@ -420,8 +453,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 
 		Application::Exit();
 	}
-	};
-
+};
 }
 
 

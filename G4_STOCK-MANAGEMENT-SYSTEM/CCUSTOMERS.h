@@ -152,6 +152,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 			this->Name = L"CCUSTOMERS";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"CCUSTOMERS";
+			this->Load += gcnew System::EventHandler(this, &CCUSTOMERS::CCUSTOMERS_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Table_CCustomers))->EndInit();
@@ -159,5 +160,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 
 		}
 #pragma endregion
-	};
+	private: System::Void CCUSTOMERS_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

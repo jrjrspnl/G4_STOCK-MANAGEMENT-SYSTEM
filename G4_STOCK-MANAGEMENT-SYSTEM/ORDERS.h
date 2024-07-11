@@ -146,7 +146,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 
 
 
-    private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_OrderDelete;
+
 
 
     private: System::Windows::Forms::Label^ Lbl_ProductName;
@@ -174,6 +174,8 @@ namespace G4STOCKMANAGEMENTSYSTEM {
     private: ComponentFactory::Krypton::Toolkit::KryptonDataGridView^ Table_AvailableProd;
 private: System::Drawing::Printing::PrintDocument^ printDocument1;
 private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
+private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_Cancel;
+private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
 
 
 
@@ -240,6 +242,8 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
         {
             System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ORDERS::typeid));
             this->panel3 = (gcnew System::Windows::Forms::Panel());
+            this->Btn_ClearOrders = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
+            this->Btn_Cancel = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
             this->Table_Orders = (gcnew ComponentFactory::Krypton::Toolkit::KryptonDataGridView());
             this->Lbl_TotalPrice = (gcnew System::Windows::Forms::Label());
             this->Btn_Receipt = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
@@ -256,7 +260,6 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             this->Table_AvailableProd = (gcnew ComponentFactory::Krypton::Toolkit::KryptonDataGridView());
             this->Lbl_Price = (gcnew System::Windows::Forms::Label());
             this->Btn_OrderClear = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
-            this->Btn_OrderDelete = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
             this->Lbl_ProductName = (gcnew System::Windows::Forms::Label());
             this->Btn_OrderAdd = (gcnew ComponentFactory::Krypton::Toolkit::KryptonButton());
             this->Num_Quantity = (gcnew ComponentFactory::Krypton::Toolkit::KryptonNumericUpDown());
@@ -280,6 +283,8 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             // panel3
             // 
             this->panel3->BackColor = System::Drawing::Color::White;
+            this->panel3->Controls->Add(this->Btn_ClearOrders);
+            this->panel3->Controls->Add(this->Btn_Cancel);
             this->panel3->Controls->Add(this->Table_Orders);
             this->panel3->Controls->Add(this->Lbl_TotalPrice);
             this->panel3->Controls->Add(this->Btn_Receipt);
@@ -295,6 +300,143 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             this->panel3->Name = L"panel3";
             this->panel3->Size = System::Drawing::Size(546, 428);
             this->panel3->TabIndex = 29;
+            // 
+            // Btn_ClearOrders
+            // 
+            this->Btn_ClearOrders->Location = System::Drawing::Point(432, 372);
+            this->Btn_ClearOrders->Name = L"Btn_ClearOrders";
+            this->Btn_ClearOrders->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
+            this->Btn_ClearOrders->OverrideDefault->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
+            this->Btn_ClearOrders->OverrideDefault->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_ClearOrders->OverrideDefault->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_ClearOrders->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
+            this->Btn_ClearOrders->OverrideFocus->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
+            this->Btn_ClearOrders->OverrideFocus->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
+            this->Btn_ClearOrders->OverrideFocus->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_ClearOrders->OverrideFocus->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_ClearOrders->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
+            this->Btn_ClearOrders->Size = System::Drawing::Size(91, 40);
+            this->Btn_ClearOrders->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
+            this->Btn_ClearOrders->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
+            this->Btn_ClearOrders->StateCommon->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
+            this->Btn_ClearOrders->StateCommon->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
+                static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
+            this->Btn_ClearOrders->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
+            this->Btn_ClearOrders->StateCommon->Content->ShortText->Color1 = System::Drawing::Color::White;
+            this->Btn_ClearOrders->StateCommon->Content->ShortText->Color2 = System::Drawing::Color::White;
+            this->Btn_ClearOrders->StateCommon->Content->ShortText->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->Btn_ClearOrders->TabIndex = 38;
+            this->Btn_ClearOrders->Values->Text = L"CLEAR";
+            this->Btn_ClearOrders->Click += gcnew System::EventHandler(this, &ORDERS::Btn_ClearOrders_Click);
+            // 
+            // Btn_Cancel
+            // 
+            this->Btn_Cancel->Location = System::Drawing::Point(439, 237);
+            this->Btn_Cancel->Name = L"Btn_Cancel";
+            this->Btn_Cancel->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->OverrideDefault->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->OverrideDefault->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->OverrideDefault->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
+            this->Btn_Cancel->OverrideFocus->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->OverrideFocus->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->OverrideFocus->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->OverrideFocus->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
+            this->Btn_Cancel->Size = System::Drawing::Size(76, 30);
+            this->Btn_Cancel->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateCommon->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateCommon->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
+            this->Btn_Cancel->StateCommon->Content->ShortText->Color1 = System::Drawing::Color::White;
+            this->Btn_Cancel->StateCommon->Content->ShortText->Color2 = System::Drawing::Color::White;
+            this->Btn_Cancel->StateCommon->Content->ShortText->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->Btn_Cancel->StateDisabled->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateDisabled->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateDisabled->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateDisabled->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateDisabled->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
+            this->Btn_Cancel->StateNormal->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateNormal->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateNormal->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateNormal->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateNormal->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
+            this->Btn_Cancel->StatePressed->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StatePressed->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StatePressed->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StatePressed->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StatePressed->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
+            this->Btn_Cancel->StatePressed->Border->GraphicsHint = ComponentFactory::Krypton::Toolkit::PaletteGraphicsHint::AntiAlias;
+            this->Btn_Cancel->StateTracking->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateTracking->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateTracking->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateTracking->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
+                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
+            this->Btn_Cancel->StateTracking->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
+                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
+            this->Btn_Cancel->TabIndex = 37;
+            this->Btn_Cancel->Values->Text = L"Cancel";
+            this->Btn_Cancel->Click += gcnew System::EventHandler(this, &ORDERS::Btn_Cancel_Click);
             // 
             // Table_Orders
             // 
@@ -329,7 +471,7 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             this->Lbl_TotalPrice->BackColor = System::Drawing::Color::White;
             this->Lbl_TotalPrice->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->Lbl_TotalPrice->Location = System::Drawing::Point(16, 273);
+            this->Lbl_TotalPrice->Location = System::Drawing::Point(16, 260);
             this->Lbl_TotalPrice->Name = L"Lbl_TotalPrice";
             this->Lbl_TotalPrice->Size = System::Drawing::Size(33, 17);
             this->Lbl_TotalPrice->TabIndex = 35;
@@ -338,7 +480,7 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             // Btn_Receipt
             // 
             this->Btn_Receipt->Cursor = System::Windows::Forms::Cursors::Arrow;
-            this->Btn_Receipt->Location = System::Drawing::Point(319, 330);
+            this->Btn_Receipt->Location = System::Drawing::Point(173, 386);
             this->Btn_Receipt->Name = L"Btn_Receipt";
             this->Btn_Receipt->OverrideDefault->Back->Color1 = System::Drawing::Color::DodgerBlue;
             this->Btn_Receipt->OverrideDefault->Back->Color2 = System::Drawing::Color::DodgerBlue;
@@ -347,7 +489,7 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             this->Btn_Receipt->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Receipt->Size = System::Drawing::Size(150, 32);
+            this->Btn_Receipt->Size = System::Drawing::Size(133, 30);
             this->Btn_Receipt->StateCommon->Back->Color1 = System::Drawing::Color::DodgerBlue;
             this->Btn_Receipt->StateCommon->Back->Color2 = System::Drawing::Color::DodgerBlue;
             this->Btn_Receipt->StateCommon->Border->Color1 = System::Drawing::Color::DodgerBlue;
@@ -365,7 +507,7 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             // 
             // Btn_Pay
             // 
-            this->Btn_Pay->Location = System::Drawing::Point(319, 273);
+            this->Btn_Pay->Location = System::Drawing::Point(14, 386);
             this->Btn_Pay->Name = L"Btn_Pay";
             this->Btn_Pay->OverrideDefault->Back->Color1 = System::Drawing::Color::MediumSeaGreen;
             this->Btn_Pay->OverrideDefault->Back->Color2 = System::Drawing::Color::MediumSeaGreen;
@@ -381,7 +523,7 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             this->Btn_Pay->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Pay->Size = System::Drawing::Size(150, 32);
+            this->Btn_Pay->Size = System::Drawing::Size(133, 30);
             this->Btn_Pay->StateCommon->Back->Color1 = System::Drawing::Color::MediumSeaGreen;
             this->Btn_Pay->StateCommon->Back->Color2 = System::Drawing::Color::MediumSeaGreen;
             this->Btn_Pay->StateCommon->Border->Color1 = System::Drawing::Color::MediumSeaGreen;
@@ -432,7 +574,7 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             this->Lbl_Change->BackColor = System::Drawing::Color::White;
             this->Lbl_Change->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->Lbl_Change->Location = System::Drawing::Point(16, 372);
+            this->Lbl_Change->Location = System::Drawing::Point(16, 353);
             this->Lbl_Change->Name = L"Lbl_Change";
             this->Lbl_Change->Size = System::Drawing::Size(33, 17);
             this->Lbl_Change->TabIndex = 34;
@@ -444,7 +586,7 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             this->label14->BackColor = System::Drawing::Color::White;
             this->label14->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label14->Location = System::Drawing::Point(11, 352);
+            this->label14->Location = System::Drawing::Point(11, 333);
             this->label14->Name = L"label14";
             this->label14->Size = System::Drawing::Size(63, 16);
             this->label14->TabIndex = 33;
@@ -456,7 +598,7 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             this->label12->BackColor = System::Drawing::Color::White;
             this->label12->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label12->Location = System::Drawing::Point(11, 299);
+            this->label12->Location = System::Drawing::Point(11, 283);
             this->label12->Name = L"label12";
             this->label12->Size = System::Drawing::Size(61, 16);
             this->label12->TabIndex = 32;
@@ -464,7 +606,7 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             // 
             // Txt_Amount
             // 
-            this->Txt_Amount->Location = System::Drawing::Point(14, 320);
+            this->Txt_Amount->Location = System::Drawing::Point(14, 304);
             this->Txt_Amount->Name = L"Txt_Amount";
             this->Txt_Amount->Size = System::Drawing::Size(159, 20);
             this->Txt_Amount->TabIndex = 31;
@@ -476,7 +618,7 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             this->label10->BackColor = System::Drawing::Color::White;
             this->label10->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label10->Location = System::Drawing::Point(11, 320);
+            this->label10->Location = System::Drawing::Point(11, 304);
             this->label10->Name = L"label10";
             this->label10->Size = System::Drawing::Size(22, 17);
             this->label10->TabIndex = 30;
@@ -500,7 +642,7 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             this->label11->BackColor = System::Drawing::Color::White;
             this->label11->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label11->Location = System::Drawing::Point(11, 250);
+            this->label11->Location = System::Drawing::Point(11, 238);
             this->label11->Name = L"label11";
             this->label11->Size = System::Drawing::Size(78, 16);
             this->label11->TabIndex = 29;
@@ -513,7 +655,6 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             this->panel4->Controls->Add(this->Table_AvailableProd);
             this->panel4->Controls->Add(this->Lbl_Price);
             this->panel4->Controls->Add(this->Btn_OrderClear);
-            this->panel4->Controls->Add(this->Btn_OrderDelete);
             this->panel4->Controls->Add(this->Lbl_ProductName);
             this->panel4->Controls->Add(this->Btn_OrderAdd);
             this->panel4->Controls->Add(this->Num_Quantity);
@@ -580,7 +721,7 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             // 
             // Btn_OrderClear
             // 
-            this->Btn_OrderClear->Location = System::Drawing::Point(307, 372);
+            this->Btn_OrderClear->Location = System::Drawing::Point(332, 372);
             this->Btn_OrderClear->Name = L"Btn_OrderClear";
             this->Btn_OrderClear->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
@@ -613,42 +754,6 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             this->Btn_OrderClear->Values->Text = L"CLEAR";
             this->Btn_OrderClear->Click += gcnew System::EventHandler(this, &ORDERS::Btn_OrderClear_Click);
             // 
-            // Btn_OrderDelete
-            // 
-            this->Btn_OrderDelete->Cursor = System::Windows::Forms::Cursors::Arrow;
-            this->Btn_OrderDelete->Location = System::Drawing::Point(179, 372);
-            this->Btn_OrderDelete->Name = L"Btn_OrderDelete";
-            this->Btn_OrderDelete->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
-                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_OrderDelete->OverrideDefault->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
-                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_OrderDelete->OverrideDefault->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
-                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_OrderDelete->OverrideDefault->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
-                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_OrderDelete->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_OrderDelete->Size = System::Drawing::Size(85, 40);
-            this->Btn_OrderDelete->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
-                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_OrderDelete->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
-                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_OrderDelete->StateCommon->Border->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
-                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_OrderDelete->StateCommon->Border->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
-                static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
-            this->Btn_OrderDelete->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
-                | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_OrderDelete->StateCommon->Content->ShortText->Color1 = System::Drawing::Color::White;
-            this->Btn_OrderDelete->StateCommon->Content->ShortText->Color2 = System::Drawing::Color::White;
-            this->Btn_OrderDelete->StateCommon->Content->ShortText->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Bold,
-                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->Btn_OrderDelete->TabIndex = 16;
-            this->Btn_OrderDelete->Values->Text = L"Delete";
-            this->Btn_OrderDelete->Click += gcnew System::EventHandler(this, &ORDERS::Btn_OrderDelete_Click);
-            // 
             // Lbl_ProductName
             // 
             this->Lbl_ProductName->AutoSize = true;
@@ -662,7 +767,7 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
             // 
             // Btn_OrderAdd
             // 
-            this->Btn_OrderAdd->Location = System::Drawing::Point(50, 372);
+            this->Btn_OrderAdd->Location = System::Drawing::Point(225, 372);
             this->Btn_OrderAdd->Name = L"Btn_OrderAdd";
             this->Btn_OrderAdd->OverrideDefault->Back->Color1 = System::Drawing::Color::MediumSeaGreen;
             this->Btn_OrderAdd->OverrideDefault->Back->Color2 = System::Drawing::Color::MediumSeaGreen;
@@ -739,7 +844,6 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
             this->Num_Quantity->TabIndex = 25;
-            this->Num_Quantity->ValueChanged += gcnew System::EventHandler(this, &ORDERS::Num_Quantity_ValueChanged);
             // 
             // Cbox_ProdID
             // 
@@ -1122,44 +1226,6 @@ private: System::Windows::Forms::PrintPreviewDialog^ printPreviewDialog1;
     private: int prodID = 0;
 
     private: System::Void Btn_OrderDelete_Click(System::Object^ sender, System::EventArgs^ e) {
-
-        if (prodID == 0)
-        {
-            MessageBox::Show("Please select item first", "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
-        }
-        else
-        {
-            System::Windows::Forms::DialogResult result = MessageBox::Show("Are you sure you want to delete PRODUCT ID: " + prodID + "?", "Confirmation Message", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
-
-            if (result == System::Windows::Forms::DialogResult::Yes)
-            {
-                if (checkConnection())
-                {
-                    try
-                    {
-                        connection->Open();
-
-                        System::String^ deleteData = "DELETE FROM orders WHERE id = @id";
-
-                        SqlCommand^ cmd = gcnew SqlCommand(deleteData, connection);
-
-                        cmd->Parameters->AddWithValue("@id", prodID);
-
-                        cmd->ExecuteNonQuery();
-                    }
-                    catch (Exception^ ex)
-                    {
-                        MessageBox::Show("Connection Failed: " + ex->Message, "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
-                    }
-                    finally
-                    {
-                        connection->Close();
-                    }
-                }
-            }
-            AllOrdersData();
-            displayTotalPrice();
-        }
     }
 private: System::Void Table_Orders_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
   
@@ -1169,24 +1235,22 @@ private: System::Void Table_Orders_CellClick(System::Object^ sender, System::Win
 
 }
        private: void deleteAllOrders() {
-           if (checkConnection()) {
-               try {
-                   connection->Open();
-
-                   System::String^ deleteData = "DELETE FROM orders";
-
-                   SqlCommand^ cmd = gcnew SqlCommand(deleteData, connection);
-
-                   cmd->ExecuteNonQuery();
-               }
-               catch (Exception^ ex) {
-                   MessageBox::Show("Connection Failed: " + ex->Message, "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
-               }
-               finally {
-                   connection->Close();
-               }
-           }
-       }
+    if (checkConnection()) {
+        try {
+            connection->Open();
+            System::String^ deleteData = "DELETE FROM orders";
+            SqlCommand^ cmd = gcnew SqlCommand(deleteData, connection);
+            cmd->ExecuteNonQuery();
+            Lbl_TotalPrice->Text = "0.00";
+            Txt_Amount->Text = "";
+            Lbl_Change->Text = "";
+        } catch (Exception^ ex) {
+            MessageBox::Show("Connection Failed: " + ex->Message, "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        } finally {
+            connection->Close();
+        }
+    }
+}
 
    public: void clearFields() {
        Cbox_Cat->SelectedIndex = -1;
@@ -1198,7 +1262,6 @@ private: System::Void Table_Orders_CellClick(System::Object^ sender, System::Win
        Txt_Amount->Text = "";
        Lbl_TotalPrice->Text = "0.00";
 
-       deleteAllOrders();
 
        // Refresh the DataGridView
        AllOrdersData();
@@ -1250,6 +1313,13 @@ private: System::Void Btn_Pay_Click(System::Object^ sender, System::EventArgs^ e
                     cmd->Parameters->AddWithValue("@date", now.ToString("yyyy-MM-dd HH:mm:ss"));
 
                     cmd->ExecuteNonQuery();
+ 
+
+                    System::String^ updateStatus = "UPDATE orders SET status = 'Paid' WHERE customer_id = @cID";
+                    SqlCommand^ updateCmd = gcnew SqlCommand(updateStatus, connection);
+                    updateCmd->Parameters->AddWithValue("@cID", idGen);
+                    updateCmd->ExecuteNonQuery();
+
                     MessageBox::Show("Paid Successfully!", "Information Message", MessageBoxButtons::OK, MessageBoxIcon::Information);
                 }
                 catch (Exception^ ex) {
@@ -1261,6 +1331,7 @@ private: System::Void Btn_Pay_Click(System::Object^ sender, System::EventArgs^ e
             }
         }
         displayTotalPrice();
+        AllOrdersData();
     }
 }
 
@@ -1390,7 +1461,135 @@ private: System::Void printDocument1_PrintPage(System::Object^ sender, System::D
     y = e->MarginBounds.Bottom - labelMargin - labelFont->GetHeight(e->Graphics);
     e->Graphics->DrawString(labelText, labelFont, Brushes::Black, e->MarginBounds.Right - e->Graphics->MeasureString("------------------", labelFont).Width, y);
     }
-private: System::Void Num_Quantity_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void Btn_Cancel_Click(System::Object^ sender, System::EventArgs^ e) {
+    if (prodID == 0) {
+        MessageBox::Show("Please select an order to cancel.", "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+    }
+    else {
+        System::Windows::Forms::DialogResult result = MessageBox::Show("Are you sure you want to cancel this order?", "Confirmation Message", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+
+        if (result == System::Windows::Forms::DialogResult::Yes) {
+            if (checkConnection()) {
+                SqlConnection^ connection = gcnew SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\jimwiel\\Documents\\stock.mdf;Integrated Security=True;Connect Timeout=30");
+                SqlTransaction^ transaction;
+
+                try {
+                    connection->Open();
+                    transaction = connection->BeginTransaction();
+
+                    // Retrieve the order details
+                    System::String^ selectOrder = "SELECT * FROM orders WHERE id = @orderID";
+                    SqlCommand^ selectCmd = gcnew SqlCommand(selectOrder, connection, transaction);
+                    selectCmd->Parameters->AddWithValue("@orderID", prodID); // Ensure prodID is the correct order ID type
+                    SqlDataReader^ reader = selectCmd->ExecuteReader();
+
+                    int quantityOrdered = 0;
+                    System::String^ productID;
+                    System::String^ status;
+
+                    if (reader->Read()) {
+                        quantityOrdered = Convert::ToInt32(reader["qty"]);
+                        productID = reader["prod_id"]->ToString(); // Use a separate variable for productID
+                        status = reader["status"]->ToString(); // Get the status of the order
+                    }
+                    reader->Close();
+
+                    // Check if the order status is "Paid"
+                    if (status == "Paid") {
+                        MessageBox::Show("This order is already paid and cannot be canceled.", "Information Message", MessageBoxButtons::OK, MessageBoxIcon::Information);
+                        return; // Exit the function without canceling the order
+                    }
+
+                    // Update the product stock
+                    System::String^ updateStock = "UPDATE products SET stock = stock + @quantity WHERE prod_id = @prodID";
+                    SqlCommand^ updateCmd = gcnew SqlCommand(updateStock, connection, transaction);
+                    updateCmd->Parameters->AddWithValue("@quantity", quantityOrdered);
+                    updateCmd->Parameters->Add("@prodID", SqlDbType::NVarChar)->Value = productID; // Explicitly specify the type
+                    updateCmd->ExecuteNonQuery();
+
+                    // Check the updated stock
+                    System::String^ checkStock = "SELECT stock FROM products WHERE prod_id = @prodID";
+                    SqlCommand^ checkCmd = gcnew SqlCommand(checkStock, connection, transaction);
+                    checkCmd->Parameters->Add("@prodID", SqlDbType::NVarChar)->Value = productID; // Explicitly specify the type
+                    int updatedStock = Convert::ToInt32(checkCmd->ExecuteScalar());
+
+                    // Update the product status if the stock is greater than 0
+                    if (updatedStock > 0) {
+                        System::String^ updateStatus = "UPDATE products SET status = 'Available' WHERE prod_id = @prodID";
+                        SqlCommand^ updateStatusCmd = gcnew SqlCommand(updateStatus, connection, transaction);
+                        updateStatusCmd->Parameters->AddWithValue("@prodID", productID);
+                        updateStatusCmd->ExecuteNonQuery();
+                    }
+
+                    // Delete the order
+                    System::String^ deleteOrder = "DELETE FROM orders WHERE id = @orderID";
+                    SqlCommand^ deleteCmd = gcnew SqlCommand(deleteOrder, connection, transaction);
+                    deleteCmd->Parameters->AddWithValue("@orderID", prodID); // Ensure prodID is the correct order ID type
+                    deleteCmd->ExecuteNonQuery();
+
+                    UpdateTotalPrice();
+
+                    transaction->Commit();
+                    MessageBox::Show("Order canceled successfully!", "Information Message", MessageBoxButtons::OK, MessageBoxIcon::Information);
+                }
+                catch (Exception^ ex) {
+                    if (transaction != nullptr) {
+                        transaction->Rollback();
+                    }
+                    MessageBox::Show("Error: " + ex->Message, "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+                }
+                finally {
+                    connection->Close();
+                }
+            }
+        }
+        AllAvailableProducts();
+        AllOrdersData();
+        displayTotalPrice();
+    }
+}
+private: void UpdateTotalPrice() {
+    double totalPrice = 0.0;
+
+    // Loop through the Orders DataGridView and calculate the total price
+    for (int i = 0; i < Table_Orders->Rows->Count; i++) {
+        totalPrice += Convert::ToDouble(Table_Orders->Rows[i]->Cells["Totalprice"]->Value);
+    }
+
+    // Update the total price label
+    Lbl_TotalPrice->Text = "" + totalPrice.ToString("F2");
+}
+
+private: System::Void Btn_ClearOrders_Click(System::Object^ sender, System::EventArgs^ e) {
+    // Check if there are any orders
+    if (Table_Orders->Rows->Count == 0) {
+        MessageBox::Show("No orders to clear.", "Information Message", MessageBoxButtons::OK, MessageBoxIcon::Information);
+        return;
+    }
+
+    // Check if all orders are paid
+    bool allPaid = true;
+    for (int i = 0; i < Table_Orders->Rows->Count; i++) {
+        if (Table_Orders->Rows[i]->Cells["status"]->Value->ToString() != "Paid") {
+            allPaid = false;
+            break;
+        }
+    }
+
+    if (!allPaid) {
+        MessageBox::Show("All orders must be paid before clearing.", "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        return;
+    }
+
+    // Show a confirmation message box
+    System::Windows::Forms::DialogResult result = MessageBox::Show("Are you sure you want to clear all orders?", "Confirmation Message", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+
+    // If the user clicks Yes, clear all orders
+    if (result == System::Windows::Forms::DialogResult::Yes) {
+        deleteAllOrders();
+        AllOrdersData(); // Refresh the DataGridView
+        displayTotalPrice(); // Update the total price label
+    }
 }
 };
 }

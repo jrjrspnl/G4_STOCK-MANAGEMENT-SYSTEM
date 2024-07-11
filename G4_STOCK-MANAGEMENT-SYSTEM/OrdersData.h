@@ -9,6 +9,7 @@ using namespace System::Data::SqlClient;
 ref class OrdersData {
 public:
     property String^ Date;
+    property String^ Status;
     property String^ TotalPrice;
     property String^ QTY;
     property String^ OrigPrice;
@@ -63,7 +64,8 @@ public:
                 oData->Category = reader["category"]->ToString();
                 oData->OrigPrice = reader["orig_price"]->ToString();
                 oData->QTY = reader["qty"]->ToString();
-                oData->TotalPrice = reader["total_Price"]->ToString();
+                oData->TotalPrice = reader["total_Price"]->ToString();     
+                oData->Status = reader["status"]->ToString();
                 oData->Date = reader["order_date"]->ToString(); // Ensure correct field name
 
                 listData->Add(oData);
