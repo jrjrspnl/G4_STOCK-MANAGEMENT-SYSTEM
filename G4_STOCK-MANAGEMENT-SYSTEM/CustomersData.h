@@ -9,12 +9,16 @@ ref class CustomersData
 {
 public:
     property String^ Date;
-    property String^ Change;
-    property String^ Amount;
-    property String^ TotalPrice;
+    property String^ Change;     
+    property String^ Amount;          
+    property String^ TotalPrice;  
+    property String^ Quantity;
+    property String^ Price;
+    property String^ Product;
+    property String^ Category;
     property String^ CustomerID;
 
-    SqlConnection^ connect = gcnew SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\jimwiel\\Documents\\stock.mdf;Integrated Security=True;Connect Timeout=30");
+    SqlConnection^ connect = gcnew SqlConnection("Data Source = (localdb)\\MSSQLLocalDB;AttachDbFilename = C:\\Users\\Jerwin\\Documents\\stock.mdf;Integrated Security = True;Encrypt = False");
 
     List<CustomersData^>^ AllCustomersData() {
         List<CustomersData^>^ listData = gcnew List<CustomersData^>();
@@ -23,7 +27,8 @@ public:
             try {
                 connect->Open();
 
-                String^ selectData = "SELECT * FROM customers";
+                // Updated query to include the `amount` column
+                String^ selectData = "SELECT customer_id, category, product, price, quantity, total_price, amount, [change], order_date FROM customers";
 
                 SqlCommand^ cmd = gcnew SqlCommand(selectData, connect);
 
@@ -33,8 +38,12 @@ public:
                     CustomersData^ cData = gcnew CustomersData();
 
                     cData->CustomerID = reader["customer_id"]->ToString();
+                    cData->Category = reader["category"]->ToString();
+                    cData->Product = reader["product"]->ToString();
+                    cData->Price = reader["price"]->ToString();
+                    cData->Quantity = reader["quantity"]->ToString();
                     cData->TotalPrice = reader["total_price"]->ToString();
-                    cData->Amount = reader["amount"]->ToString();
+                    cData->Amount = reader["amount"]->ToString(); // Populate the Amount property
                     cData->Change = reader["change"]->ToString();
                     cData->Date = reader["order_date"]->ToString();
 

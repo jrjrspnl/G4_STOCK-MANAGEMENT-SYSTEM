@@ -22,7 +22,7 @@ public:
     List<OrdersData^>^ AllOrdersData() {
         List<OrdersData^>^ listData = gcnew List<OrdersData^>();
 
-        SqlConnection^ connect = gcnew SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\jimwiel\\Documents\\stock.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection^ connect = gcnew SqlConnection("Data Source = (localdb)\\MSSQLLocalDB;AttachDbFilename = C:\\Users\\Jerwin\\Documents\\stock.mdf;Integrated Security = True;Encrypt = False");
 
         try {
             connect->Open();

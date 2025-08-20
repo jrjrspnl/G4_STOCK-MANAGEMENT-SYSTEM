@@ -20,7 +20,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
 	/// </summary>
     public ref class ORDERS : public System::Windows::Forms::Form
     {
-        SqlConnection^ connection = gcnew SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\jimwiel\\Documents\\stock.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection^ connection = gcnew SqlConnection("Data Source = (localdb)\\MSSQLLocalDB;AttachDbFilename = C:\\Users\\Jerwin\\Documents\\stock.mdf;Integrated Security = True;Encrypt = False");
     public:
         ORDERS(void)
         {
@@ -29,7 +29,6 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             AllCategoriesData();
             AllOrdersData();
             displayTotalPrice();
-
             //
             //TODO: Add the constructor code here
             //
@@ -92,7 +91,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             List<OrdersData^>^ listData =oData->AllOrdersData();
             Table_Orders->DataSource = listData;
         }
-
+       
 
     protected:
         /// <summary>
@@ -296,14 +295,16 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->panel3->Controls->Add(this->label10);
             this->panel3->Controls->Add(this->label8);
             this->panel3->Controls->Add(this->label11);
-            this->panel3->Location = System::Drawing::Point(478, 12);
+            this->panel3->Location = System::Drawing::Point(637, 15);
+            this->panel3->Margin = System::Windows::Forms::Padding(4);
             this->panel3->Name = L"panel3";
-            this->panel3->Size = System::Drawing::Size(546, 428);
+            this->panel3->Size = System::Drawing::Size(728, 527);
             this->panel3->TabIndex = 29;
             // 
             // Btn_ClearOrders
             // 
-            this->Btn_ClearOrders->Location = System::Drawing::Point(432, 372);
+            this->Btn_ClearOrders->Location = System::Drawing::Point(576, 458);
+            this->Btn_ClearOrders->Margin = System::Windows::Forms::Padding(4);
             this->Btn_ClearOrders->Name = L"Btn_ClearOrders";
             this->Btn_ClearOrders->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
@@ -327,7 +328,7 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->Btn_ClearOrders->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_ClearOrders->Size = System::Drawing::Size(91, 40);
+            this->Btn_ClearOrders->Size = System::Drawing::Size(121, 49);
             this->Btn_ClearOrders->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
             this->Btn_ClearOrders->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
@@ -349,7 +350,8 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             // 
             // Btn_Cancel
             // 
-            this->Btn_Cancel->Location = System::Drawing::Point(439, 237);
+            this->Btn_Cancel->Location = System::Drawing::Point(585, 292);
+            this->Btn_Cancel->Margin = System::Windows::Forms::Padding(4);
             this->Btn_Cancel->Name = L"Btn_Cancel";
             this->Btn_Cancel->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
                 static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
@@ -373,7 +375,7 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->Btn_Cancel->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Cancel->Size = System::Drawing::Size(76, 30);
+            this->Btn_Cancel->Size = System::Drawing::Size(101, 37);
             this->Btn_Cancel->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
                 static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
             this->Btn_Cancel->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
@@ -441,11 +443,13 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             // Table_Orders
             // 
             this->Table_Orders->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-            this->Table_Orders->Location = System::Drawing::Point(14, 44);
+            this->Table_Orders->Location = System::Drawing::Point(19, 54);
+            this->Table_Orders->Margin = System::Windows::Forms::Padding(4);
             this->Table_Orders->Name = L"Table_Orders";
             this->Table_Orders->RightToLeft = System::Windows::Forms::RightToLeft::No;
             this->Table_Orders->RowHeadersVisible = false;
-            this->Table_Orders->Size = System::Drawing::Size(519, 180);
+            this->Table_Orders->RowHeadersWidth = 51;
+            this->Table_Orders->Size = System::Drawing::Size(692, 222);
             this->Table_Orders->StateCommon->Background->Color1 = System::Drawing::Color::Gainsboro;
             this->Table_Orders->StateCommon->Background->Color2 = System::Drawing::Color::Gainsboro;
             this->Table_Orders->StateCommon->BackStyle = ComponentFactory::Krypton::Toolkit::PaletteBackStyle::GridBackgroundList;
@@ -471,16 +475,18 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->Lbl_TotalPrice->BackColor = System::Drawing::Color::White;
             this->Lbl_TotalPrice->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->Lbl_TotalPrice->Location = System::Drawing::Point(16, 260);
+            this->Lbl_TotalPrice->Location = System::Drawing::Point(21, 320);
+            this->Lbl_TotalPrice->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->Lbl_TotalPrice->Name = L"Lbl_TotalPrice";
-            this->Lbl_TotalPrice->Size = System::Drawing::Size(33, 17);
+            this->Lbl_TotalPrice->Size = System::Drawing::Size(42, 21);
             this->Lbl_TotalPrice->TabIndex = 35;
             this->Lbl_TotalPrice->Text = L"0.00";
             // 
             // Btn_Receipt
             // 
             this->Btn_Receipt->Cursor = System::Windows::Forms::Cursors::Arrow;
-            this->Btn_Receipt->Location = System::Drawing::Point(173, 386);
+            this->Btn_Receipt->Location = System::Drawing::Point(231, 475);
+            this->Btn_Receipt->Margin = System::Windows::Forms::Padding(4);
             this->Btn_Receipt->Name = L"Btn_Receipt";
             this->Btn_Receipt->OverrideDefault->Back->Color1 = System::Drawing::Color::DodgerBlue;
             this->Btn_Receipt->OverrideDefault->Back->Color2 = System::Drawing::Color::DodgerBlue;
@@ -489,7 +495,7 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->Btn_Receipt->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Receipt->Size = System::Drawing::Size(133, 30);
+            this->Btn_Receipt->Size = System::Drawing::Size(177, 37);
             this->Btn_Receipt->StateCommon->Back->Color1 = System::Drawing::Color::DodgerBlue;
             this->Btn_Receipt->StateCommon->Back->Color2 = System::Drawing::Color::DodgerBlue;
             this->Btn_Receipt->StateCommon->Border->Color1 = System::Drawing::Color::DodgerBlue;
@@ -503,11 +509,13 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->Btn_Receipt->TabIndex = 29;
             this->Btn_Receipt->Values->Text = L"Receipt";
+            this->Btn_Receipt->Visible = false;
             this->Btn_Receipt->Click += gcnew System::EventHandler(this, &ORDERS::Btn_Receipt_Click);
             // 
             // Btn_Pay
             // 
-            this->Btn_Pay->Location = System::Drawing::Point(14, 386);
+            this->Btn_Pay->Location = System::Drawing::Point(19, 475);
+            this->Btn_Pay->Margin = System::Windows::Forms::Padding(4);
             this->Btn_Pay->Name = L"Btn_Pay";
             this->Btn_Pay->OverrideDefault->Back->Color1 = System::Drawing::Color::MediumSeaGreen;
             this->Btn_Pay->OverrideDefault->Back->Color2 = System::Drawing::Color::MediumSeaGreen;
@@ -523,7 +531,7 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->Btn_Pay->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_Pay->Size = System::Drawing::Size(133, 30);
+            this->Btn_Pay->Size = System::Drawing::Size(177, 37);
             this->Btn_Pay->StateCommon->Back->Color1 = System::Drawing::Color::MediumSeaGreen;
             this->Btn_Pay->StateCommon->Back->Color2 = System::Drawing::Color::MediumSeaGreen;
             this->Btn_Pay->StateCommon->Border->Color1 = System::Drawing::Color::MediumSeaGreen;
@@ -574,9 +582,10 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->Lbl_Change->BackColor = System::Drawing::Color::White;
             this->Lbl_Change->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->Lbl_Change->Location = System::Drawing::Point(16, 353);
+            this->Lbl_Change->Location = System::Drawing::Point(21, 434);
+            this->Lbl_Change->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->Lbl_Change->Name = L"Lbl_Change";
-            this->Lbl_Change->Size = System::Drawing::Size(33, 17);
+            this->Lbl_Change->Size = System::Drawing::Size(42, 21);
             this->Lbl_Change->TabIndex = 34;
             this->Lbl_Change->Text = L"0.00";
             // 
@@ -586,9 +595,10 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->label14->BackColor = System::Drawing::Color::White;
             this->label14->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label14->Location = System::Drawing::Point(11, 333);
+            this->label14->Location = System::Drawing::Point(15, 410);
+            this->label14->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label14->Name = L"label14";
-            this->label14->Size = System::Drawing::Size(63, 16);
+            this->label14->Size = System::Drawing::Size(80, 19);
             this->label14->TabIndex = 33;
             this->label14->Text = L"Change:";
             // 
@@ -598,17 +608,19 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->label12->BackColor = System::Drawing::Color::White;
             this->label12->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label12->Location = System::Drawing::Point(11, 283);
+            this->label12->Location = System::Drawing::Point(15, 348);
+            this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label12->Name = L"label12";
-            this->label12->Size = System::Drawing::Size(61, 16);
+            this->label12->Size = System::Drawing::Size(78, 19);
             this->label12->TabIndex = 32;
             this->label12->Text = L"Amount:";
             // 
             // Txt_Amount
             // 
-            this->Txt_Amount->Location = System::Drawing::Point(14, 304);
+            this->Txt_Amount->Location = System::Drawing::Point(19, 374);
+            this->Txt_Amount->Margin = System::Windows::Forms::Padding(4);
             this->Txt_Amount->Name = L"Txt_Amount";
-            this->Txt_Amount->Size = System::Drawing::Size(159, 20);
+            this->Txt_Amount->Size = System::Drawing::Size(211, 22);
             this->Txt_Amount->TabIndex = 31;
             this->Txt_Amount->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &ORDERS::Txt_Amount_KeyDown);
             // 
@@ -618,9 +630,10 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->label10->BackColor = System::Drawing::Color::White;
             this->label10->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label10->Location = System::Drawing::Point(11, 304);
+            this->label10->Location = System::Drawing::Point(15, 374);
+            this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label10->Name = L"label10";
-            this->label10->Size = System::Drawing::Size(22, 17);
+            this->label10->Size = System::Drawing::Size(28, 21);
             this->label10->TabIndex = 30;
             this->label10->Text = L"10";
             // 
@@ -630,9 +643,10 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->label8->BackColor = System::Drawing::Color::Transparent;
             this->label8->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label8->Location = System::Drawing::Point(10, 10);
+            this->label8->Location = System::Drawing::Point(13, 12);
+            this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label8->Name = L"label8";
-            this->label8->Size = System::Drawing::Size(71, 23);
+            this->label8->Size = System::Drawing::Size(90, 28);
             this->label8->TabIndex = 19;
             this->label8->Text = L"Orders";
             // 
@@ -642,9 +656,10 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->label11->BackColor = System::Drawing::Color::White;
             this->label11->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label11->Location = System::Drawing::Point(11, 238);
+            this->label11->Location = System::Drawing::Point(15, 293);
+            this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label11->Name = L"label11";
-            this->label11->Size = System::Drawing::Size(78, 16);
+            this->label11->Size = System::Drawing::Size(97, 19);
             this->label11->TabIndex = 29;
             this->label11->Text = L"Total Price:";
             // 
@@ -665,9 +680,10 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->panel4->Controls->Add(this->Cbox_Cat);
             this->panel4->Controls->Add(this->label1);
             this->panel4->Controls->Add(this->label5);
-            this->panel4->Location = System::Drawing::Point(12, 12);
+            this->panel4->Location = System::Drawing::Point(16, 15);
+            this->panel4->Margin = System::Windows::Forms::Padding(4);
             this->panel4->Name = L"panel4";
-            this->panel4->Size = System::Drawing::Size(448, 428);
+            this->panel4->Size = System::Drawing::Size(597, 527);
             this->panel4->TabIndex = 27;
             // 
             // label6
@@ -676,20 +692,23 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->label6->BackColor = System::Drawing::Color::Transparent;
             this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label6->Location = System::Drawing::Point(9, 13);
+            this->label6->Location = System::Drawing::Point(12, 16);
+            this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label6->Name = L"label6";
-            this->label6->Size = System::Drawing::Size(185, 23);
+            this->label6->Size = System::Drawing::Size(230, 28);
             this->label6->TabIndex = 37;
             this->label6->Text = L"Available Products";
             // 
             // Table_AvailableProd
             // 
             this->Table_AvailableProd->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-            this->Table_AvailableProd->Location = System::Drawing::Point(10, 44);
+            this->Table_AvailableProd->Location = System::Drawing::Point(13, 54);
+            this->Table_AvailableProd->Margin = System::Windows::Forms::Padding(4);
             this->Table_AvailableProd->Name = L"Table_AvailableProd";
             this->Table_AvailableProd->RightToLeft = System::Windows::Forms::RightToLeft::No;
             this->Table_AvailableProd->RowHeadersVisible = false;
-            this->Table_AvailableProd->Size = System::Drawing::Size(425, 180);
+            this->Table_AvailableProd->RowHeadersWidth = 51;
+            this->Table_AvailableProd->Size = System::Drawing::Size(567, 222);
             this->Table_AvailableProd->StateCommon->Background->Color1 = System::Drawing::Color::Gainsboro;
             this->Table_AvailableProd->StateCommon->Background->Color2 = System::Drawing::Color::Gainsboro;
             this->Table_AvailableProd->StateCommon->BackStyle = ComponentFactory::Krypton::Toolkit::PaletteBackStyle::GridBackgroundList;
@@ -714,14 +733,16 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->Lbl_Price->BackColor = System::Drawing::Color::White;
             this->Lbl_Price->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->Lbl_Price->Location = System::Drawing::Point(339, 329);
+            this->Lbl_Price->Location = System::Drawing::Point(452, 405);
+            this->Lbl_Price->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->Lbl_Price->Name = L"Lbl_Price";
-            this->Lbl_Price->Size = System::Drawing::Size(0, 17);
+            this->Lbl_Price->Size = System::Drawing::Size(0, 21);
             this->Lbl_Price->TabIndex = 28;
             // 
             // Btn_OrderClear
             // 
-            this->Btn_OrderClear->Location = System::Drawing::Point(332, 372);
+            this->Btn_OrderClear->Location = System::Drawing::Point(443, 458);
+            this->Btn_OrderClear->Margin = System::Windows::Forms::Padding(4);
             this->Btn_OrderClear->Name = L"Btn_OrderClear";
             this->Btn_OrderClear->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
@@ -734,7 +755,7 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->Btn_OrderClear->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_OrderClear->Size = System::Drawing::Size(85, 40);
+            this->Btn_OrderClear->Size = System::Drawing::Size(113, 49);
             this->Btn_OrderClear->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
             this->Btn_OrderClear->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
@@ -760,14 +781,16 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->Lbl_ProductName->BackColor = System::Drawing::Color::White;
             this->Lbl_ProductName->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->Lbl_ProductName->Location = System::Drawing::Point(229, 329);
+            this->Lbl_ProductName->Location = System::Drawing::Point(305, 405);
+            this->Lbl_ProductName->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->Lbl_ProductName->Name = L"Lbl_ProductName";
-            this->Lbl_ProductName->Size = System::Drawing::Size(0, 17);
+            this->Lbl_ProductName->Size = System::Drawing::Size(0, 21);
             this->Lbl_ProductName->TabIndex = 27;
             // 
             // Btn_OrderAdd
             // 
-            this->Btn_OrderAdd->Location = System::Drawing::Point(225, 372);
+            this->Btn_OrderAdd->Location = System::Drawing::Point(300, 458);
+            this->Btn_OrderAdd->Margin = System::Windows::Forms::Padding(4);
             this->Btn_OrderAdd->Name = L"Btn_OrderAdd";
             this->Btn_OrderAdd->OverrideDefault->Back->Color1 = System::Drawing::Color::MediumSeaGreen;
             this->Btn_OrderAdd->OverrideDefault->Back->Color2 = System::Drawing::Color::MediumSeaGreen;
@@ -783,7 +806,7 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->Btn_OrderAdd->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_OrderAdd->Size = System::Drawing::Size(85, 40);
+            this->Btn_OrderAdd->Size = System::Drawing::Size(113, 49);
             this->Btn_OrderAdd->StateCommon->Back->Color1 = System::Drawing::Color::MediumSeaGreen;
             this->Btn_OrderAdd->StateCommon->Back->Color2 = System::Drawing::Color::MediumSeaGreen;
             this->Btn_OrderAdd->StateCommon->Border->Color1 = System::Drawing::Color::MediumSeaGreen;
@@ -830,9 +853,10 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             // 
             // Num_Quantity
             // 
-            this->Num_Quantity->Location = System::Drawing::Point(232, 270);
+            this->Num_Quantity->Location = System::Drawing::Point(309, 332);
+            this->Num_Quantity->Margin = System::Windows::Forms::Padding(4);
             this->Num_Quantity->Name = L"Num_Quantity";
-            this->Num_Quantity->Size = System::Drawing::Size(177, 26);
+            this->Num_Quantity->Size = System::Drawing::Size(236, 30);
             this->Num_Quantity->StateActive->Back->Color1 = System::Drawing::Color::WhiteSmoke;
             this->Num_Quantity->StateActive->Border->Color1 = System::Drawing::Color::LightGray;
             this->Num_Quantity->StateActive->Border->Color2 = System::Drawing::Color::LightGray;
@@ -848,9 +872,10 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             // Cbox_ProdID
             // 
             this->Cbox_ProdID->DropDownWidth = 117;
-            this->Cbox_ProdID->Location = System::Drawing::Point(26, 325);
+            this->Cbox_ProdID->Location = System::Drawing::Point(35, 400);
+            this->Cbox_ProdID->Margin = System::Windows::Forms::Padding(4);
             this->Cbox_ProdID->Name = L"Cbox_ProdID";
-            this->Cbox_ProdID->Size = System::Drawing::Size(177, 25);
+            this->Cbox_ProdID->Size = System::Drawing::Size(236, 29);
             this->Cbox_ProdID->StateActive->ComboBox->Back->Color1 = System::Drawing::Color::WhiteSmoke;
             this->Cbox_ProdID->StateActive->ComboBox->Border->Color1 = System::Drawing::Color::LightGray;
             this->Cbox_ProdID->StateActive->ComboBox->Border->Color2 = System::Drawing::Color::LightGray;
@@ -867,9 +892,10 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->label4->BackColor = System::Drawing::Color::White;
             this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label4->Location = System::Drawing::Point(23, 306);
+            this->label4->Location = System::Drawing::Point(31, 377);
+            this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label4->Name = L"label4";
-            this->label4->Size = System::Drawing::Size(77, 16);
+            this->label4->Size = System::Drawing::Size(98, 19);
             this->label4->TabIndex = 22;
             this->label4->Text = L"Product ID:";
             // 
@@ -879,9 +905,10 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->label3->BackColor = System::Drawing::Color::White;
             this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label3->Location = System::Drawing::Point(337, 306);
+            this->label3->Location = System::Drawing::Point(449, 377);
+            this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label3->Name = L"label3";
-            this->label3->Size = System::Drawing::Size(43, 16);
+            this->label3->Size = System::Drawing::Size(55, 19);
             this->label3->TabIndex = 21;
             this->label3->Text = L"Price:";
             // 
@@ -891,18 +918,20 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->label2->BackColor = System::Drawing::Color::White;
             this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label2->Location = System::Drawing::Point(229, 306);
+            this->label2->Location = System::Drawing::Point(305, 377);
+            this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label2->Name = L"label2";
-            this->label2->Size = System::Drawing::Size(60, 16);
+            this->label2->Size = System::Drawing::Size(76, 19);
             this->label2->TabIndex = 20;
             this->label2->Text = L"Product:";
             // 
             // Cbox_Cat
             // 
             this->Cbox_Cat->DropDownWidth = 117;
-            this->Cbox_Cat->Location = System::Drawing::Point(25, 271);
+            this->Cbox_Cat->Location = System::Drawing::Point(33, 334);
+            this->Cbox_Cat->Margin = System::Windows::Forms::Padding(4);
             this->Cbox_Cat->Name = L"Cbox_Cat";
-            this->Cbox_Cat->Size = System::Drawing::Size(177, 25);
+            this->Cbox_Cat->Size = System::Drawing::Size(236, 29);
             this->Cbox_Cat->StateActive->ComboBox->Back->Color1 = System::Drawing::Color::WhiteSmoke;
             this->Cbox_Cat->StateActive->ComboBox->Border->Color1 = System::Drawing::Color::LightGray;
             this->Cbox_Cat->StateActive->ComboBox->Border->Color2 = System::Drawing::Color::LightGray;
@@ -919,9 +948,10 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->label1->BackColor = System::Drawing::Color::White;
             this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label1->Location = System::Drawing::Point(23, 252);
+            this->label1->Location = System::Drawing::Point(31, 310);
+            this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label1->Name = L"label1";
-            this->label1->Size = System::Drawing::Size(72, 16);
+            this->label1->Size = System::Drawing::Size(90, 19);
             this->label1->TabIndex = 5;
             this->label1->Text = L"Category:";
             // 
@@ -931,9 +961,10 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             this->label5->BackColor = System::Drawing::Color::Transparent;
             this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label5->Location = System::Drawing::Point(229, 251);
+            this->label5->Location = System::Drawing::Point(305, 309);
+            this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label5->Name = L"label5";
-            this->label5->Size = System::Drawing::Size(67, 16);
+            this->label5->Size = System::Drawing::Size(81, 19);
             this->label5->TabIndex = 26;
             this->label5->Text = L"Quantity:";
             // 
@@ -954,16 +985,17 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
             // 
             // ORDERS
             // 
-            this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+            this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackColor = System::Drawing::Color::WhiteSmoke;
-            this->ClientSize = System::Drawing::Size(1036, 452);
+            this->ClientSize = System::Drawing::Size(1381, 556);
             this->Controls->Add(this->panel3);
             this->Controls->Add(this->panel4);
             this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+            this->Margin = System::Windows::Forms::Padding(4);
             this->Name = L"ORDERS";
             this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-            this->Text = L"ORDERS";
+            this->Text = L"                      ";
             this->panel3->ResumeLayout(false);
             this->panel3->PerformLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Table_Orders))->EndInit();
@@ -1005,6 +1037,23 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
                         System::String^ value = reader["prod_id"]->ToString();
                         Cbox_ProdID->Items->Add(value);
                     }
+                    reader->Close();
+
+                    if (Cbox_Cat->SelectedItem == nullptr) {
+
+                        Table_AvailableProd->DataSource = nullptr;
+                        return;
+                    }
+
+                    SqlCommand^ tableCmd = gcnew SqlCommand(selectData, connection);
+                    tableCmd->Parameters->AddWithValue("@status", "Available");
+
+                    SqlDataAdapter^ adapter = gcnew SqlDataAdapter(tableCmd);
+                    DataTable^ dataTable = gcnew DataTable();
+                    adapter->Fill(dataTable);
+
+                    
+                    Table_AvailableProd->DataSource = dataTable;
 
                 }
                 catch (Exception^ ex)
@@ -1099,7 +1148,7 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
         {
             if (checkConnection())
             {
-                SqlConnection^ connection = gcnew SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\jimwiel\\Documents\\stock.mdf;Integrated Security=True;Connect Timeout=30");
+                SqlConnection^ connection = gcnew SqlConnection("Data Source = (localdb)\\MSSQLLocalDB;AttachDbFilename = C:\\Users\\Jerwin\\Documents\\stock.mdf;Integrated Security = True;Encrypt = False");
                 SqlTransaction^ transaction;
 
                 try
@@ -1198,7 +1247,7 @@ private: ComponentFactory::Krypton::Toolkit::KryptonButton^ Btn_ClearOrders;
     private: int idGen;
 
     public:void idGenerator() {
-        SqlConnection^ connection = gcnew SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\jimwiel\\Documents\\stock.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection^ connection = gcnew SqlConnection("Data Source = (localdb)\\MSSQLLocalDB;AttachDbFilename = C:\\Users\\Jerwin\\Documents\\stock.mdf;Integrated Security = True;Encrypt = False");
 
         {
             connection->Open();
@@ -1261,6 +1310,7 @@ private: System::Void Table_Orders_CellClick(System::Object^ sender, System::Win
        Lbl_Price->Text = "";
        Txt_Amount->Text = "";
        Lbl_TotalPrice->Text = "0.00";
+       Table_AvailableProd->DataSource = nullptr;
 
 
        // Refresh the DataGridView
@@ -1269,73 +1319,101 @@ private: System::Void Table_Orders_CellClick(System::Object^ sender, System::Win
    }
 private: System::Void Btn_OrderClear_Click(System::Object^ sender, System::EventArgs^ e) {
     clearFields();
-
 }
 private: System::Void Btn_Pay_Click(System::Object^ sender, System::EventArgs^ e) {
     idGenerator();
 
     if (Txt_Amount->Text == "" || Table_Orders->Rows->Count == 0) {
         MessageBox::Show("Please order first!", "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        return;
     }
-    else {
-        float enteredAmount;
+
+    if (checkConnection()) {
         try {
-            enteredAmount = Convert::ToSingle(Txt_Amount->Text);
-        }
-        catch (Exception^) {
-            MessageBox::Show("Invalid amount entered!", "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
-            return;
-        }
+            connection->Open();
 
-        if (enteredAmount < totalPrice) {
-            MessageBox::Show("Entered amount is not enough to cover the total price!", "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
-            Lbl_Change->Text = "Insufficient funds";
-            return;
-        }
+            // Check if the order is already paid
+            System::String^ checkStatusQuery = "SELECT status FROM orders WHERE customer_id = @cID";
+            SqlCommand^ checkStatusCmd = gcnew SqlCommand(checkStatusQuery, connection);
+            checkStatusCmd->Parameters->AddWithValue("@cID", idGen);
 
-        if (MessageBox::Show("Are you sure you want to pay your Orders?", "Confirmation Message", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
-            if (checkConnection()) {
-                try {
-                    connection->Open();
+            SqlDataReader^ reader = checkStatusCmd->ExecuteReader();
 
-                    System::String^ insertData = "INSERT INTO customers (customer_id, total_price, amount, change, order_date) VALUES (@cID, @totalPrice, @amount, @change, @date)";
+            if (reader->Read()) {
+                System::String^ status = reader["status"]->ToString();
+                reader->Close();
 
-                    SqlCommand^ cmd = gcnew SqlCommand(insertData, connection);
-
-                    cmd->Parameters->AddWithValue("@cID", idGen);
-                    cmd->Parameters->AddWithValue("@totalPrice", Lbl_TotalPrice->Text);
-                    cmd->Parameters->AddWithValue("@amount", Txt_Amount->Text);
-
-                    float change = enteredAmount - totalPrice;
-                    cmd->Parameters->AddWithValue("@change", change.ToString("0.00"));
-
-                    DateTime now = DateTime::Now;
-                    cmd->Parameters->AddWithValue("@date", now.ToString("yyyy-MM-dd HH:mm:ss"));
-
-                    cmd->ExecuteNonQuery();
- 
-
-                    System::String^ updateStatus = "UPDATE orders SET status = 'Paid' WHERE customer_id = @cID";
-                    SqlCommand^ updateCmd = gcnew SqlCommand(updateStatus, connection);
-                    updateCmd->Parameters->AddWithValue("@cID", idGen);
-                    updateCmd->ExecuteNonQuery();
-
-                    MessageBox::Show("Paid Successfully!", "Information Message", MessageBoxButtons::OK, MessageBoxIcon::Information);
-                }
-                catch (Exception^ ex) {
-                    MessageBox::Show("Connection Failed: " + ex->Message, "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
-                }
-                finally {
+                if (status == "Paid") {
+                    MessageBox::Show("This order has already been paid!", "Information Message", MessageBoxButtons::OK, MessageBoxIcon::Information);
                     connection->Close();
+                    return;
                 }
             }
+
+            connection->Close();
         }
-        displayTotalPrice();
-        AllOrdersData();
+        catch (Exception^ ex) {
+            MessageBox::Show("Connection Failed: " + ex->Message, "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            connection->Close();
+            return;
+        }
     }
+
+    float enteredAmount;
+    try {
+        enteredAmount = Convert::ToSingle(Txt_Amount->Text);
+    }
+    catch (Exception^) {
+        MessageBox::Show("Invalid amount entered!", "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        return;
+    }
+
+    if (enteredAmount < totalPrice) {
+        MessageBox::Show("Entered amount is not enough to cover the total price!", "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        Lbl_Change->Text = "Insufficient funds";
+        return;
+    }
+
+    if (MessageBox::Show("Are you sure you want to pay your Orders?", "Confirmation Message", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+        if (checkConnection()) {
+            try {
+                connection->Open();
+
+                System::String^ insertData = "INSERT INTO customers (customer_id, category, product, price, quantity, total_price, amount, change, order_date) " "SELECT @cID, category, prod_name, orig_price, qty, total_price, @amount, @change, @date " "FROM orders WHERE customer_id = @cID";
+
+                SqlCommand^ cmd = gcnew SqlCommand(insertData, connection);
+
+                cmd->Parameters->AddWithValue("@cID", idGen);
+                cmd->Parameters->AddWithValue("@amount", Txt_Amount->Text);
+
+                float change = enteredAmount - totalPrice;
+                cmd->Parameters->AddWithValue("@change", change.ToString("0.00"));
+
+                DateTime now = DateTime::Now;
+                cmd->Parameters->AddWithValue("@date", now.ToString("yyyy-MM-dd HH:mm:ss"));
+
+                cmd->ExecuteNonQuery();
+
+                System::String^ updateStatus = "UPDATE orders SET status = 'Paid' WHERE customer_id = @cID";
+                SqlCommand^ updateCmd = gcnew SqlCommand(updateStatus, connection);
+                updateCmd->Parameters->AddWithValue("@cID", idGen);
+                updateCmd->ExecuteNonQuery();
+
+                MessageBox::Show("Paid Successfully!", "Information Message", MessageBoxButtons::OK, MessageBoxIcon::Information);
+                Btn_Receipt->Visible = true;
+            }
+            catch (Exception^ ex) {
+                MessageBox::Show("Connection Failed: " + ex->Message, "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            }
+            finally {
+                connection->Close();
+            }
+        }
+    }
+
+    displayTotalPrice();
+    AllOrdersData();
 }
-
-
 
 private: System::Void Txt_Amount_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
     if (e->KeyCode == Keys::Enter) {
@@ -1365,18 +1443,18 @@ private: System::Void Txt_Amount_KeyDown(System::Object^ sender, System::Windows
 private: System::Void Btn_Receipt_Click(System::Object^ sender, System::EventArgs^ e) {
     if (Txt_Amount->Text == "" || Table_Orders->Rows->Count == 0)
     {
-        MessageBox::Show("Please order first!", "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        MessageBox::Show("Please Pay first!", "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
     }
     else
     {
         printDocument1->BeginPrint += gcnew System::Drawing::Printing::PrintEventHandler(this, &ORDERS::printDocument1_BeginPrint);
         printDocument1->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &ORDERS::printDocument1_PrintPage);
 
-        // Use PrintPreviewDialog for previewing before printing
         printPreviewDialog1->Document = printDocument1;
         printPreviewDialog1->ShowDialog();
     }
 }
+
 
 private: System::Void printDocument1_BeginPrint(System::Object^ sender, System::Drawing::Printing::PrintEventArgs^ e) {
 
@@ -1470,7 +1548,7 @@ private: System::Void Btn_Cancel_Click(System::Object^ sender, System::EventArgs
 
         if (result == System::Windows::Forms::DialogResult::Yes) {
             if (checkConnection()) {
-                SqlConnection^ connection = gcnew SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\jimwiel\\Documents\\stock.mdf;Integrated Security=True;Connect Timeout=30");
+                SqlConnection^ connection = gcnew SqlConnection("Data Source = (localdb)\\MSSQLLocalDB;AttachDbFilename = C:\\Users\\Jerwin\\Documents\\stock.mdf;Integrated Security = True;Encrypt = False");
                 SqlTransaction^ transaction;
 
                 try {
@@ -1531,6 +1609,7 @@ private: System::Void Btn_Cancel_Click(System::Object^ sender, System::EventArgs
 
                     transaction->Commit();
                     MessageBox::Show("Order canceled successfully!", "Information Message", MessageBoxButtons::OK, MessageBoxIcon::Information);
+
                 }
                 catch (Exception^ ex) {
                     if (transaction != nullptr) {
@@ -1586,6 +1665,7 @@ private: System::Void Btn_ClearOrders_Click(System::Object^ sender, System::Even
 
     // If the user clicks Yes, clear all orders
     if (result == System::Windows::Forms::DialogResult::Yes) {
+        Btn_Receipt->Visible = false;
         deleteAllOrders();
         AllOrdersData(); // Refresh the DataGridView
         displayTotalPrice(); // Update the total price label

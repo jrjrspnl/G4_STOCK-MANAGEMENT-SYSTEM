@@ -18,7 +18,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
     /// </summary>
     public ref class USERS : public System::Windows::Forms::Form
     {
-        SqlConnection^ connection = gcnew SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\jimwiel\\Documents\\stock.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection^ connection = gcnew SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Jerwin\\Documents\\stock.mdf;Integrated Security=True");
 
     public:
         USERS(void)

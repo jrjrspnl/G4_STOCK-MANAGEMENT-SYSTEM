@@ -3,6 +3,7 @@
 using namespace System;
 using namespace System::Collections::Generic;
 using namespace System::Data::SqlClient;
+using namespace System::Windows::Forms;
 
 ref class ProductsData
 {
@@ -20,7 +21,7 @@ public:
     List<ProductsData^>^ displayAllProducts() {
         List<ProductsData^>^ listData = gcnew List<ProductsData^>();
 
-        SqlConnection^ connect = gcnew SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\jimwiel\\Documents\\stock.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection^ connect = gcnew SqlConnection("Data Source = (localdb)\\MSSQLLocalDB;AttachDbFilename = C:\\Users\\Jerwin\\Documents\\stock.mdf;Integrated Security = True;Encrypt = False");
         {
             connect->Open();
 
@@ -53,7 +54,7 @@ public:
     }
     List<ProductsData^>^ AllAvailableProducts() {
         List<ProductsData^>^ listData = gcnew List<ProductsData^>();
-        SqlConnection^ connect = gcnew SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\jimwiel\\Documents\\stock.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection^ connect = gcnew SqlConnection("Data Source = (localdb)\\MSSQLLocalDB;AttachDbFilename = C:\\Users\\Jerwin\\Documents\\stock.mdf;Integrated Security = True;Encrypt = False");
         {
             connect->Open();
 
@@ -85,5 +86,7 @@ public:
     return listData;
 
     }
+
+
 };
 

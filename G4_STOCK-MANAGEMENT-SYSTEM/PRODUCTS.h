@@ -19,7 +19,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
     /// </summary>
     public ref class PRODUCTS : public System::Windows::Forms::Form
     {
-        SqlConnection^ connection = gcnew SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\jimwiel\\Documents\\stock.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection^ connection = gcnew SqlConnection("Data Source = (localdb)\\MSSQLLocalDB;AttachDbFilename = C:\\Users\\Jerwin\\Documents\\stock.mdf;Integrated Security = True;Encrypt = False");
     public:
         PRODUCTS(void)
         {
@@ -197,19 +197,22 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->panel1->BackColor = System::Drawing::Color::White;
             this->panel1->Controls->Add(this->Table_Products);
             this->panel1->Controls->Add(this->label9);
-            this->panel1->Location = System::Drawing::Point(24, 243);
+            this->panel1->Location = System::Drawing::Point(32, 299);
+            this->panel1->Margin = System::Windows::Forms::Padding(4);
             this->panel1->Name = L"panel1";
-            this->panel1->Size = System::Drawing::Size(764, 347);
+            this->panel1->Size = System::Drawing::Size(1019, 427);
             this->panel1->TabIndex = 18;
             // 
             // Table_Products
             // 
             this->Table_Products->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-            this->Table_Products->Location = System::Drawing::Point(17, 49);
+            this->Table_Products->Location = System::Drawing::Point(23, 60);
+            this->Table_Products->Margin = System::Windows::Forms::Padding(4);
             this->Table_Products->Name = L"Table_Products";
             this->Table_Products->RightToLeft = System::Windows::Forms::RightToLeft::No;
             this->Table_Products->RowHeadersVisible = false;
-            this->Table_Products->Size = System::Drawing::Size(722, 284);
+            this->Table_Products->RowHeadersWidth = 51;
+            this->Table_Products->Size = System::Drawing::Size(963, 350);
             this->Table_Products->StateCommon->Background->Color1 = System::Drawing::Color::Gainsboro;
             this->Table_Products->StateCommon->Background->Color2 = System::Drawing::Color::Gainsboro;
             this->Table_Products->StateCommon->BackStyle = ComponentFactory::Krypton::Toolkit::PaletteBackStyle::GridBackgroundList;
@@ -228,6 +231,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
             this->Table_Products->TabIndex = 20;
             this->Table_Products->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &PRODUCTS::Table_Products_CellClick);
+            this->Table_Products->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &PRODUCTS::Table_Products_CellContentClick);
             // 
             // label9
             // 
@@ -235,9 +239,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label9->BackColor = System::Drawing::Color::Transparent;
             this->label9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label9->Location = System::Drawing::Point(19, 13);
+            this->label9->Location = System::Drawing::Point(25, 16);
+            this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label9->Name = L"label9";
-            this->label9->Size = System::Drawing::Size(118, 23);
+            this->label9->Size = System::Drawing::Size(148, 28);
             this->label9->TabIndex = 15;
             this->label9->Text = L"All Products";
             // 
@@ -262,15 +267,17 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->panel2->Controls->Add(this->label4);
             this->panel2->Controls->Add(this->label5);
             this->panel2->Controls->Add(this->label6);
-            this->panel2->Location = System::Drawing::Point(24, 17);
+            this->panel2->Location = System::Drawing::Point(32, 21);
+            this->panel2->Margin = System::Windows::Forms::Padding(4);
             this->panel2->Name = L"panel2";
-            this->panel2->Size = System::Drawing::Size(764, 208);
+            this->panel2->Size = System::Drawing::Size(1019, 256);
             this->panel2->TabIndex = 19;
             // 
             // Btn_DelProd
             // 
             this->Btn_DelProd->Cursor = System::Windows::Forms::Cursors::Arrow;
-            this->Btn_DelProd->Location = System::Drawing::Point(654, 59);
+            this->Btn_DelProd->Location = System::Drawing::Point(872, 73);
+            this->Btn_DelProd->Margin = System::Windows::Forms::Padding(4);
             this->Btn_DelProd->Name = L"Btn_DelProd";
             this->Btn_DelProd->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
                 static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
@@ -283,7 +290,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Btn_DelProd->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_DelProd->Size = System::Drawing::Size(85, 40);
+            this->Btn_DelProd->Size = System::Drawing::Size(113, 49);
             this->Btn_DelProd->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
                 static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(109)));
             this->Btn_DelProd->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(244)),
@@ -305,7 +312,8 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // Btn_UpdateProd
             // 
-            this->Btn_UpdateProd->Location = System::Drawing::Point(552, 120);
+            this->Btn_UpdateProd->Location = System::Drawing::Point(736, 148);
+            this->Btn_UpdateProd->Margin = System::Windows::Forms::Padding(4);
             this->Btn_UpdateProd->Name = L"Btn_UpdateProd";
             this->Btn_UpdateProd->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)),
                 static_cast<System::Int32>(static_cast<System::Byte>(170)), static_cast<System::Int32>(static_cast<System::Byte>(241)));
@@ -318,7 +326,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Btn_UpdateProd->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_UpdateProd->Size = System::Drawing::Size(85, 40);
+            this->Btn_UpdateProd->Size = System::Drawing::Size(113, 49);
             this->Btn_UpdateProd->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)),
                 static_cast<System::Int32>(static_cast<System::Byte>(170)), static_cast<System::Int32>(static_cast<System::Byte>(241)));
             this->Btn_UpdateProd->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(48)),
@@ -340,7 +348,8 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // Btn_ClearProd
             // 
-            this->Btn_ClearProd->Location = System::Drawing::Point(654, 120);
+            this->Btn_ClearProd->Location = System::Drawing::Point(872, 148);
+            this->Btn_ClearProd->Margin = System::Windows::Forms::Padding(4);
             this->Btn_ClearProd->Name = L"Btn_ClearProd";
             this->Btn_ClearProd->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
@@ -353,7 +362,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Btn_ClearProd->OverrideDefault->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_ClearProd->Size = System::Drawing::Size(85, 40);
+            this->Btn_ClearProd->Size = System::Drawing::Size(113, 49);
             this->Btn_ClearProd->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
                 static_cast<System::Int32>(static_cast<System::Byte>(151)), static_cast<System::Int32>(static_cast<System::Byte>(84)));
             this->Btn_ClearProd->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)),
@@ -375,7 +384,8 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // Btn_images
             // 
-            this->Btn_images->Location = System::Drawing::Point(418, 141);
+            this->Btn_images->Location = System::Drawing::Point(557, 174);
+            this->Btn_images->Margin = System::Windows::Forms::Padding(4);
             this->Btn_images->Name = L"Btn_images";
             this->Btn_images->OverrideDefault->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(82)),
                 static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
@@ -399,7 +409,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Btn_images->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_images->Size = System::Drawing::Size(85, 27);
+            this->Btn_images->Size = System::Drawing::Size(113, 33);
             this->Btn_images->StateCommon->Back->Color1 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(82)),
                 static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
             this->Btn_images->StateCommon->Back->Color2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(82)),
@@ -421,7 +431,8 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // Btn_AddProd
             // 
-            this->Btn_AddProd->Location = System::Drawing::Point(552, 59);
+            this->Btn_AddProd->Location = System::Drawing::Point(736, 73);
+            this->Btn_AddProd->Margin = System::Windows::Forms::Padding(4);
             this->Btn_AddProd->Name = L"Btn_AddProd";
             this->Btn_AddProd->OverrideDefault->Back->Color1 = System::Drawing::Color::MediumSeaGreen;
             this->Btn_AddProd->OverrideDefault->Back->Color2 = System::Drawing::Color::MediumSeaGreen;
@@ -437,7 +448,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Btn_AddProd->OverrideFocus->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
-            this->Btn_AddProd->Size = System::Drawing::Size(85, 40);
+            this->Btn_AddProd->Size = System::Drawing::Size(113, 49);
             this->Btn_AddProd->StateCommon->Back->Color1 = System::Drawing::Color::MediumSeaGreen;
             this->Btn_AddProd->StateCommon->Back->Color2 = System::Drawing::Color::MediumSeaGreen;
             this->Btn_AddProd->StateCommon->Border->Color1 = System::Drawing::Color::MediumSeaGreen;
@@ -487,9 +498,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->Pbox_Image->BackColor = System::Drawing::Color::Gainsboro;
             this->Pbox_Image->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Pbox_Image.BackgroundImage")));
             this->Pbox_Image->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-            this->Pbox_Image->Location = System::Drawing::Point(410, 42);
+            this->Pbox_Image->Location = System::Drawing::Point(547, 52);
+            this->Pbox_Image->Margin = System::Windows::Forms::Padding(4);
             this->Pbox_Image->Name = L"Pbox_Image";
-            this->Pbox_Image->Size = System::Drawing::Size(100, 88);
+            this->Pbox_Image->Size = System::Drawing::Size(133, 108);
             this->Pbox_Image->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
             this->Pbox_Image->TabIndex = 27;
             this->Pbox_Image->TabStop = false;
@@ -498,9 +510,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             this->Cbox_Status->DropDownWidth = 117;
             this->Cbox_Status->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Available", L"Not Available" });
-            this->Cbox_Status->Location = System::Drawing::Point(212, 152);
+            this->Cbox_Status->Location = System::Drawing::Point(283, 187);
+            this->Cbox_Status->Margin = System::Windows::Forms::Padding(4);
             this->Cbox_Status->Name = L"Cbox_Status";
-            this->Cbox_Status->Size = System::Drawing::Size(156, 25);
+            this->Cbox_Status->Size = System::Drawing::Size(208, 29);
             this->Cbox_Status->StateActive->ComboBox->Back->Color1 = System::Drawing::Color::WhiteSmoke;
             this->Cbox_Status->StateActive->ComboBox->Border->Color1 = System::Drawing::Color::LightGray;
             this->Cbox_Status->StateActive->ComboBox->Border->Color2 = System::Drawing::Color::LightGray;
@@ -512,9 +525,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // Txt_Price
             // 
-            this->Txt_Price->Location = System::Drawing::Point(214, 42);
+            this->Txt_Price->Location = System::Drawing::Point(285, 52);
+            this->Txt_Price->Margin = System::Windows::Forms::Padding(4);
             this->Txt_Price->Name = L"Txt_Price";
-            this->Txt_Price->Size = System::Drawing::Size(156, 27);
+            this->Txt_Price->Size = System::Drawing::Size(208, 31);
             this->Txt_Price->StateActive->Back->Color1 = System::Drawing::Color::WhiteSmoke;
             this->Txt_Price->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
@@ -524,9 +538,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // Txt_Stock
             // 
-            this->Txt_Stock->Location = System::Drawing::Point(213, 96);
+            this->Txt_Stock->Location = System::Drawing::Point(284, 118);
+            this->Txt_Stock->Margin = System::Windows::Forms::Padding(4);
             this->Txt_Stock->Name = L"Txt_Stock";
-            this->Txt_Stock->Size = System::Drawing::Size(156, 27);
+            this->Txt_Stock->Size = System::Drawing::Size(208, 31);
             this->Txt_Stock->StateActive->Back->Color1 = System::Drawing::Color::WhiteSmoke;
             this->Txt_Stock->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
@@ -536,9 +551,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // Txt_ProdName
             // 
-            this->Txt_ProdName->Location = System::Drawing::Point(24, 151);
+            this->Txt_ProdName->Location = System::Drawing::Point(32, 186);
+            this->Txt_ProdName->Margin = System::Windows::Forms::Padding(4);
             this->Txt_ProdName->Name = L"Txt_ProdName";
-            this->Txt_ProdName->Size = System::Drawing::Size(156, 27);
+            this->Txt_ProdName->Size = System::Drawing::Size(208, 31);
             this->Txt_ProdName->StateActive->Back->Color1 = System::Drawing::Color::WhiteSmoke;
             this->Txt_ProdName->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
@@ -548,9 +564,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // 
             // Txt_ProdID
             // 
-            this->Txt_ProdID->Location = System::Drawing::Point(24, 96);
+            this->Txt_ProdID->Location = System::Drawing::Point(32, 118);
+            this->Txt_ProdID->Margin = System::Windows::Forms::Padding(4);
             this->Txt_ProdID->Name = L"Txt_ProdID";
-            this->Txt_ProdID->Size = System::Drawing::Size(156, 27);
+            this->Txt_ProdID->Size = System::Drawing::Size(208, 31);
             this->Txt_ProdID->StateActive->Back->Color1 = System::Drawing::Color::WhiteSmoke;
             this->Txt_ProdID->StateCommon->Border->DrawBorders = static_cast<ComponentFactory::Krypton::Toolkit::PaletteDrawBorders>((((ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Top | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Bottom)
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Left)
@@ -561,9 +578,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             // Cbox_Cat
             // 
             this->Cbox_Cat->DropDownWidth = 117;
-            this->Cbox_Cat->Location = System::Drawing::Point(23, 42);
+            this->Cbox_Cat->Location = System::Drawing::Point(31, 52);
+            this->Cbox_Cat->Margin = System::Windows::Forms::Padding(4);
             this->Cbox_Cat->Name = L"Cbox_Cat";
-            this->Cbox_Cat->Size = System::Drawing::Size(157, 25);
+            this->Cbox_Cat->Size = System::Drawing::Size(209, 29);
             this->Cbox_Cat->StateActive->ComboBox->Back->Color1 = System::Drawing::Color::WhiteSmoke;
             this->Cbox_Cat->StateActive->ComboBox->Border->Color1 = System::Drawing::Color::LightGray;
             this->Cbox_Cat->StateActive->ComboBox->Border->Color2 = System::Drawing::Color::LightGray;
@@ -572,6 +590,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
                 | ComponentFactory::Krypton::Toolkit::PaletteDrawBorders::Right));
             this->Cbox_Cat->StateActive->ComboBox->Border->Rounding = 5;
             this->Cbox_Cat->TabIndex = 10;
+            this->Cbox_Cat->SelectedIndexChanged += gcnew System::EventHandler(this, &PRODUCTS::Cbox_Cat_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -579,9 +598,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label3->BackColor = System::Drawing::Color::White;
             this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label3->Location = System::Drawing::Point(21, 23);
+            this->label3->Location = System::Drawing::Point(28, 28);
+            this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label3->Name = L"label3";
-            this->label3->Size = System::Drawing::Size(72, 16);
+            this->label3->Size = System::Drawing::Size(90, 19);
             this->label3->TabIndex = 8;
             this->label3->Text = L"Category:";
             // 
@@ -591,9 +611,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label1->BackColor = System::Drawing::Color::White;
             this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label1->Location = System::Drawing::Point(22, 77);
+            this->label1->Location = System::Drawing::Point(29, 95);
+            this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label1->Name = L"label1";
-            this->label1->Size = System::Drawing::Size(77, 16);
+            this->label1->Size = System::Drawing::Size(98, 19);
             this->label1->TabIndex = 16;
             this->label1->Text = L"Product ID:";
             // 
@@ -603,9 +624,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label2->BackColor = System::Drawing::Color::White;
             this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label2->Location = System::Drawing::Point(22, 132);
+            this->label2->Location = System::Drawing::Point(29, 162);
+            this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label2->Name = L"label2";
-            this->label2->Size = System::Drawing::Size(103, 16);
+            this->label2->Size = System::Drawing::Size(132, 19);
             this->label2->TabIndex = 18;
             this->label2->Text = L"Product Name:";
             // 
@@ -615,9 +637,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label4->BackColor = System::Drawing::Color::White;
             this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label4->Location = System::Drawing::Point(210, 133);
+            this->label4->Location = System::Drawing::Point(280, 164);
+            this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label4->Name = L"label4";
-            this->label4->Size = System::Drawing::Size(49, 16);
+            this->label4->Size = System::Drawing::Size(60, 19);
             this->label4->TabIndex = 25;
             this->label4->Text = L"Status:";
             // 
@@ -627,9 +650,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label5->BackColor = System::Drawing::Color::White;
             this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label5->Location = System::Drawing::Point(211, 77);
+            this->label5->Location = System::Drawing::Point(281, 95);
+            this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label5->Name = L"label5";
-            this->label5->Size = System::Drawing::Size(46, 16);
+            this->label5->Size = System::Drawing::Size(59, 19);
             this->label5->TabIndex = 20;
             this->label5->Text = L"Stock:";
             // 
@@ -639,21 +663,23 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             this->label6->BackColor = System::Drawing::Color::White;
             this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label6->Location = System::Drawing::Point(212, 23);
+            this->label6->Location = System::Drawing::Point(283, 28);
+            this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
             this->label6->Name = L"label6";
-            this->label6->Size = System::Drawing::Size(43, 16);
+            this->label6->Size = System::Drawing::Size(55, 19);
             this->label6->TabIndex = 24;
             this->label6->Text = L"Price:";
             // 
             // PRODUCTS
             // 
-            this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+            this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackColor = System::Drawing::Color::WhiteSmoke;
-            this->ClientSize = System::Drawing::Size(809, 605);
+            this->ClientSize = System::Drawing::Size(1079, 745);
             this->Controls->Add(this->panel2);
             this->Controls->Add(this->panel1);
             this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+            this->Margin = System::Windows::Forms::Padding(4);
             this->Name = L"PRODUCTS";
             this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
             this->Text = L"PRODUCTS";
@@ -674,10 +700,10 @@ namespace G4STOCKMANAGEMENTSYSTEM {
     private: bool emptyFields() {
         if (Txt_ProdID->Text == "" ||
             Txt_ProdName->Text == "" ||
-            Cbox_Cat->SelectedIndex == -1 ||
+            Cbox_Cat->SelectedItem == nullptr || // Check if no category is selected
             Txt_Price->Text == "" ||
             Txt_Stock->Text == "" ||
-            Cbox_Status->SelectedIndex == -1 ||
+            Cbox_Status->SelectedItem == nullptr || // Check if no status is selected
             Pbox_Image->Image == nullptr) {
             return true;
         }
@@ -685,6 +711,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
             return false;
         }
     }
+
     public: void displayCategories() {
         if (checkConnection())
         {
@@ -804,6 +831,7 @@ namespace G4STOCKMANAGEMENTSYSTEM {
         Txt_Price->Text = "";
         Txt_Stock->Text = "";
         Cbox_Status->SelectedIndex = -1;
+        Cbox_Status->SelectedIndex = -1;
         Pbox_Image->Image = nullptr;
 
     }
@@ -812,34 +840,38 @@ namespace G4STOCKMANAGEMENTSYSTEM {
     }
     private: System::Void Table_Products_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 
-        if (e->RowIndex >= -1) {
+        if (e->RowIndex >= 0 && e->RowIndex < Table_Products->Rows->Count) {
 
             DataGridViewRow^ row = Table_Products->Rows[e->RowIndex];
 
-            getID = (int)row->Cells[0]->Value;
+            // Safely get each cell value, handling nulls
+            getID = row->Cells[0]->Value != nullptr ? Convert::ToInt32(row->Cells[0]->Value) : 0;
 
-            Txt_ProdID->Text = row->Cells[1]->Value->ToString();
-            Txt_ProdName->Text = row->Cells[2]->Value->ToString();
-            Cbox_Cat->Text = row->Cells[3]->Value->ToString();
-            Txt_Price->Text = row->Cells[4]->Value->ToString();
-            Txt_Stock->Text = row->Cells[5]->Value->ToString();
+            Txt_ProdID->Text = row->Cells[1]->Value != nullptr ? row->Cells[1]->Value->ToString() : "";
+            Txt_ProdName->Text = row->Cells[2]->Value != nullptr ? row->Cells[2]->Value->ToString() : "";
+            Cbox_Cat->Text = row->Cells[3]->Value != nullptr ? row->Cells[3]->Value->ToString() : "";
+            Txt_Price->Text = row->Cells[4]->Value != nullptr ? row->Cells[4]->Value->ToString() : "";
+            Txt_Stock->Text = row->Cells[5]->Value != nullptr ? row->Cells[5]->Value->ToString() : "";
 
-            System::String^ imagePath = row->Cells[6]->Value->ToString();
-            try
-            {
-                if (imagePath != nullptr)
-                {
+            // Handle the image path safely
+            System::String^ imagePath = row->Cells[6]->Value != nullptr ? row->Cells[6]->Value->ToString() : "";
+            try {
+                if (!System::String::IsNullOrWhiteSpace(imagePath)) {
                     Pbox_Image->Image = Image::FromFile(imagePath);
                 }
-
+                else {
+                    Pbox_Image->Image = nullptr; // Clear the PictureBox if no image path
+                }
             }
-            catch (Exception^ ex)
-            {
-                MessageBox::Show("Connection Failed: " + ex->Message, "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+            catch (Exception^ ex) {
+                MessageBox::Show("Failed to load image: " + ex->Message, "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+                Pbox_Image->Image = nullptr; // Clear the PictureBox in case of an error
             }
 
-            Cbox_Status->Text = row->Cells[7]->Value->ToString();
-
+            Cbox_Status->Text = row->Cells[7]->Value != nullptr ? row->Cells[7]->Value->ToString() : "";
+        }
+        else {
+            MessageBox::Show("Invalid row selected.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Warning);
         }
     }
   private: System::Void Btn_UpdateProd_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -938,5 +970,44 @@ namespace G4STOCKMANAGEMENTSYSTEM {
         }
 
     }
+private: System::Void Table_Products_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void Cbox_Cat_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+
+    if (Cbox_Cat->SelectedItem == nullptr) {
+        // If no category is selected, clear the table or show all products
+        Table_Products->DataSource = nullptr;
+        return;
+    }
+
+
+    if (checkConnection()) {
+        try {
+            connection->Open();
+
+   
+            System::String^ selectedCategory = Cbox_Cat->SelectedItem->ToString();
+
+
+            System::String^ query = "SELECT * FROM products WHERE category = @category";
+
+            SqlCommand^ cmd = gcnew SqlCommand(query, connection);
+            cmd->Parameters->AddWithValue("@category", selectedCategory);
+
+            SqlDataAdapter^ adapter = gcnew SqlDataAdapter(cmd);
+            DataTable^ dataTable = gcnew DataTable();
+            adapter->Fill(dataTable);
+
+            
+            Table_Products->DataSource = dataTable;
+        }
+        catch (Exception^ ex) {
+            MessageBox::Show("Connection Failed: " + ex->Message, "Error Message", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        }
+        finally {
+            connection->Close();
+        }
+    }
+}
 };
 }
